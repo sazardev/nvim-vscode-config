@@ -1,94 +1,219 @@
-# NVIM a VS Code configuration
+# 🚀 Neovim VS Code Experience
 
-This repository contains a configuration for Neovim for my tablet (Android & Termux) and desktop (Windows Powershell). 
+Una configuración completa de Neovim que proporciona una experiencia similar a VS Code, optimizada tanto para **Windows** como para **Android (Termux)**. 
 
-The idea is to have a consistent development environment across devices, leveraging Neovim's capabilities and plugins to provide a rich coding experience similar to VS Code.
+## ✨ Características Principales
 
-Same shortcuts and keybindings as VS Code, with a focus on Go, Python, React and Astro development.
+- **🎯 Experiencia VS Code**: Atajos familiares y comportamientos similares
+- **🌐 Multi-plataforma**: Funciona en Windows y Android/Termux
+- **📊 LSP completo**: Soporte para 15+ lenguajes de programación
+- **🎨 Tema moderno**: Tokyo Night con variaciones
+- **⚡ Alto rendimiento**: Configuración optimizada y ligera
+- **🔧 Extensible**: Fácil de personalizar y modificar
 
-## Features
-- **Keybindings**: Mimics VS Code shortcuts for a familiar experience.
-- **Language Support**: Enhanced support for Go, Python, React, and Astro.
-- **Plugins**: A curated set of plugins to enhance functionality and productivity.
-- **LSP Integration**: Language Server Protocol support for better code intelligence.
-- **Debugging**: Integrated debugging capabilities.
-- **Terminal Integration**: Built-in terminal for running commands and scripts.
+## 🖥️ Plataformas Soportadas
 
-## 🚀 Quick Installation
-
-### Windows (PowerShell)
-
-**One-line installation:**
-```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/your-username/nvim-vscode-config/main/windows/install.ps1" -UseBasicParsing).Content
-```
-
-**Or manual installation:**
-1. Open PowerShell as Administrator
-2. Navigate to the `windows` folder
-3. Run `.\install.ps1`
-
-See [Windows README](windows/README.md) for detailed instructions.
+### Windows
+- ✅ **Windows PowerShell 7+**
+- ✅ **Windows Terminal** (recomendado)
+- ✅ **Nerd Fonts** incluidas
+- ✅ **Winget** para instalación automática
 
 ### Android (Termux)
+- ✅ **Termux** desde F-Droid
+- ✅ **Termux:API** para funciones adicionales
+- ✅ **Optimizado para pantallas táctiles**
+- ✅ **Gestión de energía**
 
-Coming soon! Configuration for Android devices using Termux.
+## 🚀 Instalación Rápida
 
-## 📁 Structure
+### Para Windows PowerShell
+
+```powershell
+# Instalación con un comando (como administrador)
+Invoke-Expression (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/sazardev/nvim-vscode-config/refs/heads/master/windows/install.ps1" -UseBasicParsing).Content
+```
+
+### Para Android (Termux)
+
+```bash
+# Instalación con un comando
+curl -fsSL https://raw.githubusercontent.com/sazardev/nvim-vscode-config/main/android/install.sh | bash
+```
+
+## 📁 Estructura del Proyecto
 
 ```
 nvim-vscode-config/
-├── windows/                 # Windows PowerShell configuration
-│   ├── init.lua            # Main configuration file
-│   ├── lua/                # Lua configuration modules
-│   ├── install.ps1         # Automated installation script
-│   ├── installation.md     # Manual installation guide
-│   └── README.md           # Windows-specific documentation
-├── android/                # Android/Termux configuration (coming soon)
-└── README.md              # This file
+├── README.md                 # Este archivo
+├── windows/                  # Configuración para Windows
+│   ├── install.ps1           # Script de instalación PowerShell
+│   ├── installation.md       # Guía detallada Windows
+│   ├── init.lua              # Configuración principal
+│   └── lua/
+│       ├── config/           # Configuraciones base
+│       └── plugins/          # Configuración de plugins
+└── android/                  # Configuración para Android
+    ├── install.sh            # Script de instalación Bash
+    ├── README.md             # Guía específica Android
+    ├── init.lua              # Configuración móvil
+    └── lua/
+        ├── config/           # Configuraciones optimizadas móvil
+        └── plugins/          # Plugins optimizados móvil
 ```
 
-## 🎯 Supported Languages
+## 🔧 Lenguajes Soportados
 
-- **JavaScript/TypeScript** - Full LSP, debugging, testing
-- **Python** - Complete development environment
-- **Go** - LSP, debugging, testing
-- **Rust** - Language server and debugging
-- **Lua** - Neovim configuration development
-- **Astro** - Modern web framework support
-- **HTML/CSS** - Web development essentials
-- **JSON/YAML** - Configuration files
-- **Markdown** - Documentation with preview
+| Lenguaje | LSP Server | Formatter | Linter | Debug |
+|----------|------------|-----------|--------|-------|
+| **JavaScript/TypeScript** | ✅ typescript-language-server | ✅ Prettier | ✅ ESLint | ✅ DAP |
+| **Python** | ✅ python-lsp-server | ✅ Black | ✅ Pylint | ✅ debugpy |
+| **Go** | ✅ gopls | ✅ gofmt | ✅ staticcheck | ✅ delve |
+| **Rust** | ✅ rust-analyzer | ✅ rustfmt | ✅ clippy | ✅ DAP |
+| **Lua** | ✅ lua-language-server | ✅ stylua | ✅ luacheck | ❌ |
+| **HTML/CSS** | ✅ vscode-langservers | ✅ Prettier | ✅ stylelint | ❌ |
+| **JSON/YAML** | ✅ Built-in | ✅ Prettier | ✅ Built-in | ❌ |
+| **Markdown** | ✅ marksman | ✅ Prettier | ✅ markdownlint | ❌ |
+| **Astro** | ✅ @astrojs/language-server | ✅ Prettier | ✅ ESLint | ❌ |
 
-## 🎮 Key Features
+## ⌨️ Atajos de Teclado Universales
 
-### VS Code-like Experience
-- `Ctrl+P` - Quick file search
-- `Ctrl+S` - Save file
-- `Ctrl+/` - Toggle comments
-- `F5` - Start debugging
-- `F12` - Go to definition
-- `Ctrl+Shift+P` - Command palette
+### Navegación (VS Code style)
+| Tecla | Acción |
+|-------|--------|
+| `<Space>` | Tecla líder principal |
+| `<Ctrl+P>` | Buscar archivos rápido |
+| `<Space>ff` | Buscar archivos |
+| `<Space>fg` | Buscar en archivos (grep) |
+| `<Space>fr` | Archivos recientes |
+| `<Space>e` | Toggle explorador |
+| `<Space>gg` | LazyGit |
 
-### Modern Development Tools
-- **Telescope** - Fuzzy finder for everything
-- **nvim-tree** - File explorer with Git integration
-- **LazyGit** - Beautiful Git interface
-- **Mason** - Easy LSP server management
-- **DAP** - Debug Adapter Protocol
-- **Neotest** - Modern testing interface
+### LSP (Intellisense)
+| Tecla | Acción |
+|-------|--------|
+| `gd` | Ir a definición |
+| `gr` | Buscar referencias |
+| `gi` | Ir a implementación |
+| `K` | Hover documentation |
+| `<Space>ca` | Code actions |
+| `<Space>rn` | Renombrar |
+| `]d` / `[d` | Next/Previous diagnostic |
 
-### Beautiful UI
-- Tokyo Night theme
-- Nerd Font icons
-- Smooth animations
-- Modern statusline and tabline
-- Floating windows with borders
+### Debugging
+| Tecla | Acción |
+|-------|--------|
+| `<F5>` | Start/Continue |
+| `<F10>` | Step Over |
+| `<F11>` | Step Into |
+| `<F12>` | Step Out |
+| `<Space>b` | Toggle breakpoint |
+| `<Space>B` | Conditional breakpoint |
 
-## 🤝 Contributing
+## 📊 Plugins Incluidos
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+### Core
+- **lazy.nvim** - Plugin manager moderno
+- **plenary.nvim** - Utilidades Lua
+- **nvim-web-devicons** - Iconos
 
-## 📝 License
+### UI/UX
+- **tokyonight.nvim** - Tema principal
+- **lualine.nvim** - Statusline elegante
+- **bufferline.nvim** - Pestañas de buffers
+- **alpha-nvim** - Dashboard de inicio
+- **nvim-notify** - Notificaciones mejoradas
+- **indent-blankline.nvim** - Guías de indentación
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+### Navegación
+- **telescope.nvim** - Fuzzy finder
+- **nvim-tree.lua** - Explorador de archivos
+- **harpoon** - Navegación rápida de archivos
+- **trouble.nvim** - Lista de problemas
+
+### Desarrollo
+- **nvim-lspconfig** - LSP configuration
+- **mason.nvim** - LSP installer
+- **nvim-cmp** - Auto-completion
+- **nvim-treesitter** - Syntax highlighting
+- **gitsigns.nvim** - Git integration
+- **lazygit.nvim** - Git UI
+
+### Herramientas
+- **nvim-dap** - Debug Adapter Protocol
+- **conform.nvim** - Formatting
+- **nvim-lint** - Linting
+- **neotest** - Testing framework
+- **todo-comments.nvim** - TODO highlighting
+
+## 🚨 Solución de Problemas
+
+### Windows
+```powershell
+# Si falla la instalación, ejecutar como administrador
+# Si PATH no se actualiza:
+$env:PATH = [System.Environment]::GetEnvironmentVariable("PATH", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("PATH", "User")
+
+# Reinstalar Neovim
+winget uninstall Neovim.Neovim
+winget install Neovim.Neovim
+```
+
+### Android
+```bash
+# Actualizar paquetes
+pkg update && pkg upgrade
+
+# Reinstalar Neovim
+pkg reinstall neovim
+
+# Limpiar caché de plugins
+rm -rf ~/.local/share/nvim
+```
+
+### General
+```vim
+" En Neovim, verificar salud del sistema
+:checkhealth
+
+" Reinstalar plugins
+:Lazy clean
+:Lazy sync
+
+" Actualizar LSP servers
+:Mason
+```
+
+## 🤝 Contribuir
+
+¡Las contribuciones son bienvenidas!
+
+1. **Fork** el repositorio
+2. Crea una **branch** para tu feature (`git checkout -b feature/AmazingFeature`)
+3. **Commit** tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. **Push** a la branch (`git push origin feature/AmazingFeature`)
+5. Abre un **Pull Request**
+
+### Estructura de contribuciones
+- **Windows**: Cambios en `/windows/`
+- **Android**: Cambios en `/android/`
+- **Universal**: Cambios que aplican a ambos
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+
+## 🆘 Soporte
+
+- **🐛 Bugs**: [GitHub Issues](https://github.com/sazardev/nvim-vscode-config/issues)
+- **💬 Discusiones**: [GitHub Discussions](https://github.com/sazardev/nvim-vscode-config/discussions)
+
+## ⭐ Show your support
+
+Si te gusta este proyecto, ¡dale una ⭐ en GitHub!
+
+---
+
+**¿Te resultó útil?** Considera darle una estrella ⭐ al repositorio y compartirlo con otros desarrolladores.
+
+Hecho con ❤️ para la comunidad de desarrolladores que aman Neovim.

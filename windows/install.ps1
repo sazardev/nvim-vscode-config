@@ -5,13 +5,29 @@
 param(
     [switch]$SkipDependencies,
     [switch]$ForceInstall,
-    [string]$ConfigSource = "local"
+    [string]$ConfigSource = "local",
+    [string]$RepoUrl = "https://github.com/your-username/nvim-vscode-config.git"
 )
+
+# Auto-detect execution context
+if (-not $PSScriptRoot -and $ConfigSource -eq "local") {
+    Write-Host "⚠️  Script ejecutado remotamente - cambiando a modo repositorio" -ForegroundColor Yellow
+    $ConfigSource = $RepoUrl
+}
 
 # Require Administrator privileges
 if (-NOT ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
     Write-Host "Este script requiere privilegios de administrador. Ejecutando como administrador..." -ForegroundColor Yellow
-    Start-Process PowerShell -Verb RunAs "-File `"$($MyInvocation.MyCommand.Path)`" $($MyInvocation.UnboundArguments)"
+    
+    # Preserve parameters when re-launching as admin
+    $params = @()
+    if ($SkipDependencies) { $params += "-SkipDependencies" }
+    if ($ForceInstall) { $params += "-ForceInstall" }
+    if ($ConfigSource -ne "local") { $params += "-ConfigSource '$ConfigSource'" }
+    if ($RepoUrl -ne "https://github.com/your-username/nvim-vscode-config.git") { $params += "-RepoUrl '$RepoUrl'" }
+    
+    $paramString = $params -join " "
+    Start-Process PowerShell -Verb RunAs "-File `"$($MyInvocation.MyCommand.Path)`" $paramString"
     exit
 }
 
@@ -19,6 +35,11 @@ Write-Host "╔═════════════════════�
 Write-Host "║              NVIM VS Code Experience - Installer              ║" -ForegroundColor Cyan  
 Write-Host "║                        Para Windows                            ║" -ForegroundColor Cyan
 Write-Host "╚════════════════════════════════════════════════════════════════╝" -ForegroundColor Cyan
+Write-Host ""
+Write-Host "📋 Configuración:" -ForegroundColor Cyan
+Write-Host "   • Fuente: $ConfigSource" -ForegroundColor White
+Write-Host "   • Omitir dependencias: $SkipDependencies" -ForegroundColor White
+Write-Host "   • Forzar instalación: $ForceInstall" -ForegroundColor White
 Write-Host ""
 
 # Functions
@@ -181,21 +202,88 @@ function Setup-NvimConfig {
     New-Item -ItemType Directory -Path $nvimConfigPath -Force | Out-Null
     
     if ($Source -eq "local") {
-        # Copy from local windows folder
-        $sourceConfig = Join-Path $PSScriptRoot "windows"
-        if (Test-Path $sourceConfig) {
-            Copy-Item -Path "$sourceConfig\*" -Destination $nvimConfigPath -Recurse -Force
-            Write-Host "✅ Configuración copiada desde carpeta local" -ForegroundColor Green
+        # Get the script directory properly
+        $scriptPath = if ($PSScriptRoot) { 
+            $PSScriptRoot 
+        } elseif ($MyInvocation.MyCommand.Path) {
+            Split-Path -Parent $MyInvocation.MyCommand.Path 
         } else {
-            Write-Host "❌ No se encontró la carpeta de configuración local" -ForegroundColor Red
+            $PWD.Path
+        }
+        
+        # Possible source locations to check
+        $possibleSources = @(
+            $scriptPath,                           # Current script directory
+            "$scriptPath\windows",                 # windows subdirectory
+            "$scriptPath\..\windows",              # parent\windows
+            ".\windows",                           # relative windows
+            "."                                    # current directory
+        )
+        
+        $sourceConfig = $null
+        foreach ($possibleSource in $possibleSources) {
+            $resolvedPath = Resolve-Path $possibleSource -ErrorAction SilentlyContinue
+            if ($resolvedPath -and (Test-Path "$resolvedPath\init.lua")) {
+                $sourceConfig = $resolvedPath.Path
+                break
+            }
+        }
+        
+        if ($sourceConfig) {
+            try {
+                # Copy configuration files
+                if (Test-Path "$sourceConfig\init.lua") {
+                    Copy-Item -Path "$sourceConfig\init.lua" -Destination $nvimConfigPath -Force
+                }
+                if (Test-Path "$sourceConfig\lua") {
+                    Copy-Item -Path "$sourceConfig\lua" -Destination $nvimConfigPath -Recurse -Force
+                }
+                Write-Host "✅ Configuración copiada desde: $sourceConfig" -ForegroundColor Green
+                return $true
+            }
+            catch {
+                Write-Host "❌ Error copiando configuración: $($_.Exception.Message)" -ForegroundColor Red
+                return $false
+            }
+        } else {
+            Write-Host "❌ No se encontró la configuración de Neovim local" -ForegroundColor Red
+            Write-Host "Buscando en:" -ForegroundColor Cyan
+            foreach ($path in $possibleSources) {
+                Write-Host "  - $path" -ForegroundColor Gray
+            }
             return $false
         }
     } else {
         # Clone from repository
         if (Test-CommandExists git) {
             try {
-                git clone $Source $nvimConfigPath
-                Write-Host "✅ Configuración clonada desde repositorio" -ForegroundColor Green
+                # Clone the repo to a temp directory first
+                $tempPath = Join-Path $env:TEMP "nvim-config-temp"
+                if (Test-Path $tempPath) {
+                    Remove-Item -Path $tempPath -Recurse -Force
+                }
+                
+                git clone $Source $tempPath
+                
+                # Copy Windows config to nvim directory
+                $windowsConfigPath = "$tempPath\windows"
+                if (Test-Path "$windowsConfigPath\init.lua") {
+                    if (Test-Path "$windowsConfigPath\init.lua") {
+                        Copy-Item -Path "$windowsConfigPath\init.lua" -Destination $nvimConfigPath -Force
+                    }
+                    if (Test-Path "$windowsConfigPath\lua") {
+                        Copy-Item -Path "$windowsConfigPath\lua" -Destination $nvimConfigPath -Recurse -Force
+                    }
+                    Write-Host "✅ Configuración clonada y copiada desde repositorio" -ForegroundColor Green
+                    
+                    # Clean up temp directory
+                    Remove-Item -Path $tempPath -Recurse -Force -ErrorAction SilentlyContinue
+                    return $true
+                } else {
+                    Write-Host "❌ No se encontró configuración de Windows en el repositorio" -ForegroundColor Red
+                    Remove-Item -Path $tempPath -Recurse -Force -ErrorAction SilentlyContinue
+                    return $false
+                }
             }
             catch {
                 Write-Host "❌ Error clonando repositorio: $($_.Exception.Message)" -ForegroundColor Red
@@ -213,24 +301,71 @@ function Setup-NvimConfig {
 function Test-Installation {
     Write-Host "Verificando instalación..." -ForegroundColor Yellow
     
+    # Refresh PATH first
+    $env:PATH = [System.Environment]::GetEnvironmentVariable("PATH", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("PATH", "User")
+    
     $checks = @{
-        "Neovim" = { Test-CommandExists nvim }
+        "Neovim" = { 
+            (Get-Command nvim -ErrorAction SilentlyContinue) -or 
+            (Get-Command nvim.exe -ErrorAction SilentlyContinue) -or
+            (Get-ChildItem "$env:LOCALAPPDATA\Microsoft\WinGet\Packages\Neovim.Neovim_*\nvim-win64\bin\nvim.exe" -ErrorAction SilentlyContinue)
+        }
         "Git" = { Test-CommandExists git }
         "Node.js" = { Test-CommandExists node }
-        "Python" = { Test-CommandExists python }
-        "Ripgrep" = { Test-CommandExists rg }
-        "fd" = { Test-CommandExists fd }
+        "Python" = { (Test-CommandExists python) -or (Test-CommandExists python3) }
+        "Ripgrep" = { 
+            (Test-CommandExists rg) -or 
+            (Get-ChildItem "$env:LOCALAPPDATA\Microsoft\WinGet\Packages\BurntSushi.ripgrep.MSVC_*\rg.exe" -ErrorAction SilentlyContinue)
+        }
+        "fd" = { 
+            (Test-CommandExists fd) -or 
+            (Get-ChildItem "$env:LOCALAPPDATA\Microsoft\WinGet\Packages\sharkdp.fd_*\fd.exe" -ErrorAction SilentlyContinue)
+        }
         "fzf" = { Test-CommandExists fzf }
+        "LazyGit" = { Test-CommandExists lazygit }
     }
     
     $allGood = $true
+    $failedTools = @()
+    
     foreach ($check in $checks.GetEnumerator()) {
-        $result = & $check.Value
-        if ($result) {
-            Write-Host "✅ $($check.Key)" -ForegroundColor Green
-        } else {
-            Write-Host "❌ $($check.Key)" -ForegroundColor Red
+        try {
+            $result = & $check.Value
+            if ($result) {
+                Write-Host "✅ $($check.Key)" -ForegroundColor Green
+            } else {
+                Write-Host "❌ $($check.Key)" -ForegroundColor Red
+                $allGood = $false
+                $failedTools += $check.Key
+            }
+        } catch {
+            Write-Host "❌ $($check.Key) (Error: $($_.Exception.Message))" -ForegroundColor Red
             $allGood = $false
+            $failedTools += $check.Key
+        }
+    }
+    
+    # Check Neovim config
+    $nvimConfigPath = "$env:LOCALAPPDATA\nvim"
+    if (Test-Path "$nvimConfigPath\init.lua") {
+        Write-Host "✅ Configuración de Neovim" -ForegroundColor Green
+    } else {
+        Write-Host "❌ Configuración de Neovim" -ForegroundColor Red
+        $allGood = $false
+    }
+    
+    # Show guidance if there are failures
+    if (-not $allGood) {
+        Write-Host "" 
+        Write-Host "� RECOMENDACIONES:" -ForegroundColor Yellow
+        Write-Host "1. Cierra y abre una nueva ventana de PowerShell/Terminal" -ForegroundColor Yellow
+        Write-Host "2. Ejecuta 'refreshenv' si tienes Chocolatey instalado" -ForegroundColor Yellow
+        Write-Host "3. Reinicia tu computadora si persisten los problemas" -ForegroundColor Yellow
+        
+        if ($failedTools.Count -gt 0) {
+            Write-Host ""
+            Write-Host "❌ Herramientas no encontradas: $($failedTools -join ', ')" -ForegroundColor Red
+            Write-Host "   Pueden haber sido instaladas pero no están en PATH aún." -ForegroundColor Yellow
         }
     }
     
