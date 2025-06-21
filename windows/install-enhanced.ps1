@@ -249,6 +249,24 @@ function Setup-NvimConfig {
             if (Test-Path "$tempPath\windows") {
                 Copy-Item -Path "$tempPath\windows\*" -Destination $nvimConfigPath -Recurse -Force
                 Write-Host "✅ Configuración descargada e instalada" -ForegroundColor Green
+                
+                # Apply fixes immediately
+                Write-Host "🔧 Aplicando correcciones de configuración..." -ForegroundColor Cyan
+                $optionsFile = "$nvimConfigPath\lua\config\options.lua"
+                if (Test-Path $optionsFile) {
+                    $content = Get-Content $optionsFile -Raw
+                    
+                    # Fix fillchars
+                    $content = $content -replace 'foldopen = ""', 'foldopen = ""'
+                    $content = $content -replace 'foldclose = ""', 'foldclose = ""'
+                    
+                    # Remove problematic fold settings from options.lua
+                    $content = $content -replace 'opt\.foldmethod = "expr".*\r?\n', ''
+                    $content = $content -replace 'opt\.foldexpr = "nvim_treesitter#foldexpr\(\)".*\r?\n', ''
+                    
+                    Set-Content -Path $optionsFile -Value $content -Encoding UTF8
+                    Write-Host "✅ Correcciones aplicadas" -ForegroundColor Green
+                }
             } else {
                 throw "No se encontró la configuración de Windows en el repositorio"
             }

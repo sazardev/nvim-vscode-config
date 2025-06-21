@@ -35,8 +35,8 @@ opt.winminwidth = 5                -- Minimum window width
 opt.splitright = true              -- Split to the right
 opt.splitbelow = true              -- Split below
 opt.fillchars = {
-  foldopen = "",
-  foldclose = "",
+  foldopen = "▼",
+  foldclosed = "▶",
   fold = " ",
   foldsep = " ",
   diff = "╱",
@@ -75,8 +75,6 @@ opt.foldcolumn = "1"              -- Show fold column
 opt.foldlevel = 99                -- Start with all folds open
 opt.foldlevelstart = 99           -- Start with all folds open
 opt.foldenable = true             -- Enable folding
-opt.foldmethod = "expr"           -- Use expression folding
-opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- Performance
 opt.lazyredraw = false            -- Don't redraw while executing macros
