@@ -1,0 +1,659 @@
+
+==============================================================================
+dap:                                                                        ✅
+
+dap: Adapters ~
+
+dap.adapter: pwa-node ~
+- ✅ OK is executable: node
+
+dap.adapter: python ~
+- ✅ OK is executable: C:\Users\cerbe\AppData\Local\nvim-data\mason\bin\debugpy-adapter.CMD
+
+dap.adapter: delve ~
+- ✅ OK is executable: C:\Users\cerbe\AppData\Local\nvim-data\mason\bin\dlv.CMD
+
+dap: Sessions ~
+- ✅ OK No active sessions
+
+==============================================================================
+diffview:                                                                 1 ⚠️
+
+Checking plugin dependencies ~
+- ✅ OK nvim-web-devicons installed.
+
+Checking VCS tools ~
+- The plugin requires at least one of the supported VCS tools to be valid.
+- ✅ OK Git found.
+- ✅ OK Git is up-to-date. (2.50.0.windows.1)
+- ⚠️ WARNING Configured `hg_cmd` is not executable: 'hg'
+
+==============================================================================
+dressing:                                                                   ✅
+
+dressing.nvim ~
+- ✅ OK vim.ui.input active
+- ✅ OK vim.ui.select active: telescope
+
+==============================================================================
+lazy:                                                               2 ⚠️  1 ❌
+
+lazy.nvim ~
+- {lazy.nvim} version `11.17.1`
+- ✅ OK {git} `version 2.50.0.windows.1`
+- ✅ OK no existing packages found by other package managers
+- ✅ OK packer_compiled.lua not found
+
+luarocks ~
+- checking `hererocks` installation
+- ✅ OK no plugins require `luarocks`, so you can ignore any warnings below
+- ✅ OK {python} `Python 3.12.10`
+- ❌ ERROR {C:/Users/cerbe/AppData/Local/nvim-data/lazy-rocks/hererocks/bin/luarocks} not installed
+- ⚠️ WARNING {C:/Users/cerbe/AppData/Local/nvim-data/lazy-rocks/hererocks/bin/lua} version `5.1` not installed
+- ⚠️ WARNING Lazy won't be able to install plugins that require `luarocks`.
+  Here's what you can do:
+   - fix your `luarocks` installation
+   - disable *hererocks* with `opts.rocks.hererocks = false`
+   - disable `luarocks` support completely with `opts.rocks.enabled = false`
+
+==============================================================================
+lspconfig:                                                                  ✅
+
+- Skipped. This healthcheck is redundant with `:checkhealth vim.lsp`.
+
+==============================================================================
+luasnip:                                                                  1 ⚠️
+
+luasnip ~
+- ⚠️ WARNING For Variable/Placeholder-transformations, luasnip requires
+      the jsregexp library. See `:help |luasnip-lsp-snippets-transformations`| for advice
+  
+
+==============================================================================
+mason:                                                                   12 ⚠️
+
+mason.nvim ~
+- ✅ OK mason.nvim version v2.0.0
+- ✅ OK PATH: prepend
+- ✅ OK Providers: 
+    mason.providers.registry-api
+    mason.providers.client
+- ✅ OK neovim version >= 0.10.0
+
+mason.nvim [Registries] ~
+- ✅ OK Registry `github.com/mason-org/mason-registry version: 2025-06-21-kind-twist` is installed.
+
+mason.nvim [Core utils] ~
+- ⚠️ WARNING unzip: not available
+  - ADVICE:
+    - spawn: unzip failed with exit code - and signal -. Could not find executable "unzip" in PATH.
+
+- ✅ OK wget: `GNU Wget 1.21.4, a non-interactive network retriever.`
+- ✅ OK curl: `curl 8.13.0 (Windows) libcurl/8.13.0 Schannel zlib/1.3.1 WinIDN`
+- ⚠️ WARNING gzip: not available
+  - ADVICE:
+    - spawn: gzip failed with exit code - and signal -. Could not find executable "gzip" in PATH.
+
+- ✅ OK tar: `bsdtar 3.7.7 - libarchive 3.7.7 zlib/1.2.13.1-motley liblzma/5.4.3 bz2lib/1.0.8 libzstd/1.5.5 `
+- ✅ OK pwsh: `7.5.1 Microsoft Windows 10.0.26100 Win32NT`
+- ⚠️ WARNING 7z: not available
+  - ADVICE:
+    - spawn: 7z failed with exit code - and signal -. Could not find executable "7z" in PATH.
+
+
+mason.nvim [Languages] ~
+- ⚠️ WARNING cargo: not available
+  - ADVICE:
+    - spawn: cargo failed with exit code - and signal -. Could not find executable "cargo" in PATH.
+
+- ⚠️ WARNING luarocks: not available
+  - ADVICE:
+    - spawn: luarocks failed with exit code - and signal -. Could not find executable "luarocks" in PATH.
+
+- ⚠️ WARNING Ruby: not available
+  - ADVICE:
+    - spawn: ruby failed with exit code - and signal -. Could not find executable "ruby" in PATH.
+
+- ⚠️ WARNING RubyGem: not available
+  - ADVICE:
+    - spawn: gem failed with exit code - and signal -. Could not find executable "gem" in PATH.
+
+- ⚠️ WARNING Composer: not available
+  - ADVICE:
+    - spawn: composer failed with exit code - and signal -. Could not find executable "composer" in PATH.
+
+- ⚠️ WARNING PHP: not available
+  - ADVICE:
+    - spawn: php failed with exit code - and signal -. Could not find executable "php" in PATH.
+
+- ⚠️ WARNING javac: not available
+  - ADVICE:
+    - spawn: javac failed with exit code - and signal -. Could not find executable "javac" in PATH.
+
+- ⚠️ WARNING java: not available
+  - ADVICE:
+    - spawn: java failed with exit code - and signal -. Could not find executable "java" in PATH.
+
+- ⚠️ WARNING julia: not available
+  - ADVICE:
+    - spawn: julia failed with exit code - and signal -. Could not find executable "julia" in PATH.
+
+- ✅ OK node: `v24.2.0`
+- ✅ OK Go: `go version go1.24.4 windows/amd64`
+- ✅ OK python: `Python 3.12.10`
+- ✅ OK npm: `11.4.0`
+- ✅ OK pip: `pip 25.0.1 from C:\Users\cerbe\AppData\Local\Programs\Python\Python312\Lib\site-packages\pip (python 3.12)`
+- ✅ OK python venv: `Ok`
+
+==============================================================================
+mason-lspconfig:                                                            ✅
+
+mason-lspconfig.nvim ~
+- ✅ OK Neovim v0.11
+- ✅ OK mason.nvim v2
+
+==============================================================================
+nvim-treesitter:                                                          1 ⚠️
+
+Installation ~
+- ⚠️ WARNING `tree-sitter` executable not found (parser generator, only needed for :TSInstallFromGrammar, not required for :TSInstall)
+- ✅ OK `node` found v24.2.0 (only needed for :TSInstallFromGrammar)
+- ✅ OK `git` executable found.
+- ✅ OK `cl` executable found. Selected from { vim.NIL, "cc", "gcc", "clang", "cl", "zig" }
+  Version: Compilador de optimizaci�n de C/C++ de Microsoft (R) versi�n 19.44.35209 para x64
+- ✅ OK Neovim was compiled with tree-sitter runtime ABI version 15 (required >=13). Parsers must be compatible with runtime ABI.
+
+OS Info:
+{
+  machine = "x86_64",
+  release = "10.0.26100",
+  sysname = "Windows_NT",
+  version = "Windows 11 Home Single Language"
+} ~
+
+Parser/Features         H L F I J
+  - astro               ✓ ✓ ✓ ✓ ✓
+  - bash                ✓ ✓ ✓ . ✓
+  - c                   ✓ ✓ ✓ ✓ ✓
+  - cmake               ✓ . ✓ ✓ ✓
+  - cpp                 ✓ ✓ ✓ ✓ ✓
+  - css                 ✓ . ✓ ✓ ✓
+  - dockerfile          ✓ . . . ✓
+  - git_rebase          ✓ . . . ✓
+  - gitcommit           ✓ . . . ✓
+  - gitignore           ✓ . . . ✓
+  - go                  ✓ ✓ ✓ ✓ ✓
+  - gomod               ✓ . . . ✓
+  - gosum               ✓ . . . .
+  - gowork              ✓ . . . ✓
+  - html                ✓ ✓ ✓ ✓ ✓
+  - javascript          ✓ ✓ ✓ ✓ ✓
+  - json                ✓ ✓ ✓ ✓ .
+  - jsonc               ✓ ✓ ✓ ✓ ✓
+  - lua                 ✓ ✓ ✓ ✓ ✓
+  - luadoc              ✓ . . . .
+  - luap                ✓ . . . .
+  - markdown            ✓ . ✓ ✓ ✓
+  - markdown_inline     ✓ . . . ✓
+  - prisma              ✓ . ✓ . ✓
+  - python              ✓ ✓ ✓ ✓ ✓
+  - regex               ✓ . . . .
+  - rust                ✓ ✓ ✓ ✓ ✓
+  - scss                ✓ . ✓ ✓ ✓
+  - sql                 ✓ . ✓ ✓ ✓
+  - toml                ✓ ✓ ✓ ✓ ✓
+  - tsx                 ✓ ✓ ✓ ✓ ✓
+  - typescript          ✓ ✓ ✓ ✓ ✓
+  - vim                 ✓ ✓ ✓ . ✓
+  - vimdoc              ✓ . . . ✓
+  - yaml                ✓ ✓ ✓ ✓ ✓
+
+  Legend: H[ighlight], L[ocals], F[olds], I[ndents], In[j]ections
+         +) multiple parsers found, only one will be used
+         x) errors found in the query, try to run :TSUpdate {lang} ~
+
+==============================================================================
+rainbow-delimiters:                                                         ✅
+
+Custom strategies ~
+- ✅ OK Valid custom strategy for 'vim'.
+- ✅ OK Valid custom default strategy.
+
+Custom queries ~
+- ✅ OK Valid custom default query
+- ✅ OK Valid custom query for 'lua'
+
+Custom priorities ~
+- ✅ OK Valid custom default priority
+- ✅ OK Valid custom priority for 'lua'
+
+Custom highlight groups ~
+- ✅ OK Highlight group 'RainbowDelimiterRed' defined.
+- ✅ OK Highlight group 'RainbowDelimiterYellow' defined.
+- ✅ OK Highlight group 'RainbowDelimiterBlue' defined.
+- ✅ OK Highlight group 'RainbowDelimiterOrange' defined.
+- ✅ OK Highlight group 'RainbowDelimiterGreen' defined.
+- ✅ OK Highlight group 'RainbowDelimiterViolet' defined.
+- ✅ OK Highlight group 'RainbowDelimiterCyan' defined.
+
+==============================================================================
+telescope:                                                                  ✅
+
+Checking for required plugins ~
+- ✅ OK plenary installed.
+- ✅ OK nvim-treesitter installed.
+
+Checking external dependencies ~
+- ✅ OK rg: found ripgrep 14.1.1 (rev 4649aa9700)
+- ✅ OK fd: found fd 10.2.0
+
+===== Installed extensions ===== ~
+
+Telescope Extension: `dap` ~
+- No healthcheck provided
+
+Telescope Extension: `notify` ~
+- No healthcheck provided
+
+Telescope Extension: `projects` ~
+- No healthcheck provided
+
+==============================================================================
+vim.deprecated:                                                           2 ⚠️
+
+ ~
+- ⚠️ WARNING vim.tbl_flatten is deprecated. Feature will be removed in Nvim 0.13
+  - ADVICE:
+    - use vim.iter(…):flatten():totable() instead.
+    - stack traceback:
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/neotest-jest/lua/neotest-jest/util.lua:158
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/neotest-jest/lua/neotest-jest/jest-util.lua:39
+        [C]:-1
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/neotest-jest/lua/neotest-jest/init.lua:6
+        [C]:-1
+        C:/Users/cerbe/AppData/Local/nvim/lua/plugins/tools.lua:27
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:380
+        [C]:-1
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/util.lua:135
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:395
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:362
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:197
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:127
+        C:\Users\cerbe\AppData\Local\nvim-data\lazy\lazy.nvim/lua/lazy/init.lua:112
+        C:\Users\cerbe\AppData\Local\nvim\init.lua:33
+    - stack traceback:
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/nvim-colorizer.lua/lua/colorizer/nvim.lua:96
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/nvim-colorizer.lua/lua/colorizer.lua:588
+        C:/Users/cerbe/AppData/Local/nvim/lua/plugins/ui.lua:352
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:380
+        [C]:-1
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/util.lua:135
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:395
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:362
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:197
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:127
+        C:\Users\cerbe\AppData\Local\nvim-data\lazy\lazy.nvim/lua/lazy/init.lua:112
+        C:\Users\cerbe\AppData\Local\nvim\init.lua:33
+    - stack traceback:
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/nvim-colorizer.lua/lua/colorizer/nvim.lua:96
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/nvim-colorizer.lua/lua/colorizer.lua:589
+        C:/Users/cerbe/AppData/Local/nvim/lua/plugins/ui.lua:352
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:380
+        [C]:-1
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/util.lua:135
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:395
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:362
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:197
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:127
+        C:\Users\cerbe\AppData\Local\nvim-data\lazy\lazy.nvim/lua/lazy/init.lua:112
+        C:\Users\cerbe\AppData\Local\nvim\init.lua:33
+    - stack traceback:
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/nvim-colorizer.lua/lua/colorizer/nvim.lua:96
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/nvim-colorizer.lua/lua/colorizer.lua:613
+        C:/Users/cerbe/AppData/Local/nvim/lua/plugins/ui.lua:352
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:380
+        [C]:-1
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/util.lua:135
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:395
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:362
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:197
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:127
+        C:\Users\cerbe\AppData\Local\nvim-data\lazy\lazy.nvim/lua/lazy/init.lua:112
+        C:\Users\cerbe\AppData\Local\nvim\init.lua:33
+    - stack traceback:
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/nvim-colorizer.lua/lua/colorizer/nvim.lua:96
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/nvim-colorizer.lua/lua/colorizer.lua:617
+        C:/Users/cerbe/AppData/Local/nvim/lua/plugins/ui.lua:352
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:380
+        [C]:-1
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/util.lua:135
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:395
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:362
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:197
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:127
+        C:\Users\cerbe\AppData\Local\nvim-data\lazy\lazy.nvim/lua/lazy/init.lua:112
+        C:\Users\cerbe\AppData\Local\nvim\init.lua:33
+
+ ~
+- ⚠️ WARNING vim.validate is deprecated. Feature will be removed in Nvim 1.0
+  - ADVICE:
+    - use vim.validate(name, value, validator, optional_or_msg) instead.
+    - stack traceback:
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/alpha-nvim/lua/alpha.lua:730
+        C:/Users/cerbe/AppData/Local/nvim/lua/plugins/ui.lua:289
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:380
+        [C]:-1
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/util.lua:135
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:395
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:362
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:197
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:127
+        C:\Users\cerbe\AppData\Local\nvim-data\lazy\lazy.nvim/lua/lazy/init.lua:112
+        C:\Users\cerbe\AppData\Local\nvim\init.lua:33
+    - stack traceback:
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/mason-nvim-dap.nvim/lua/mason-nvim-dap/settings.lua:29
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/mason-nvim-dap.nvim/lua/mason-nvim-dap/init.lua:75
+        C:/Users/cerbe/AppData/Local/nvim/lua/plugins/debug.lua:324
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:380
+        [C]:-1
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/util.lua:135
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:395
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:362
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:197
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/lazy.nvim/lua/lazy/core/loader.lua:127
+        C:\Users\cerbe\AppData\Local\nvim-data\lazy\lazy.nvim/lua/lazy/init.lua:112
+        C:\Users\cerbe\AppData\Local\nvim\init.lua:33
+    - stack traceback:
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/nvim-notify/lua/notify/service/notification.lua:37
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/nvim-notify/lua/notify/instance.lua:111
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/nvim-notify/lua/notify/init.lua:202
+        [C]:-1
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/diffview.nvim/lua/diffview/job.lua:408
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/diffview.nvim/lua/diffview/utils.lua:326
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/diffview.nvim/lua/diffview/vcs/adapters/git/init.lua:101
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/diffview.nvim/lua/diffview/health.lua:82
+        C:/Users/cerbe/AppData/Local/nvim-data/lazy/diffview.nvim/lua/diffview/health.lua:99
+        equire("diffview.health").check():1
+        [C]:-1
+        C:/Program Files/Neovim/share/nvim/runtime/lua/vim/health.lua:440
+        nvim>:1
+
+==============================================================================
+vim.health:                                                                 ✅
+
+Configuration ~
+- ✅ OK no issues found
+
+Runtime ~
+- ✅ OK $VIMRUNTIME: C:\Program Files\Neovim\share/nvim/runtime
+
+Performance ~
+- ✅ OK Build type: Release
+
+Remote Plugins ~
+- ✅ OK Up to date
+
+External Tools ~
+- ✅ OK ripgrep 14.1.1 (rev 4649aa9700) (C:\Users\cerbe\AppData\Local\Microsoft\WinGet\Links\rg.EXE)
+
+==============================================================================
+vim.lsp:                                                                    ✅
+
+- LSP log level : WARN
+- Log path: C:/Users/cerbe/AppData/Local/nvim-data/lsp.log
+- Log size: 0 KB
+
+vim.lsp: Active Clients ~
+- No active clients
+
+vim.lsp: Enabled Configurations ~
+- astro:
+  - before_init: <function @C:/Users/cerbe/AppData/Local/nvim-data/lazy/mason-lspconfig.nvim/lua/mason-lspconfig/lsp/astro.lua:2>
+  - cmd: { "astro-ls", "--stdio" }
+  - filetypes: astro
+  - init_options: {
+      typescript = {}
+    }
+  - root_markers: package.json, tsconfig.json, jsconfig.json, .git
+
+- cssls:
+  - cmd: { "vscode-css-language-server", "--stdio" }
+  - filetypes: css, scss, less
+  - init_options: {
+      provideFormatter = true
+    }
+  - root_markers: package.json, .git
+  - settings: {
+      css = {
+        validate = true
+      },
+      less = {
+        validate = true
+      },
+      scss = {
+        validate = true
+      }
+    }
+
+- gopls:
+  - cmd: { "gopls" }
+  - filetypes: go, gomod, gowork, gotmpl
+  - root_dir: <function @C:/Users/cerbe/AppData/Local/nvim-data/lazy/nvim-lspconfig/lsp/gopls.lua:24>
+
+- html:
+  - cmd: { "vscode-html-language-server", "--stdio" }
+  - filetypes: html, templ
+  - init_options: {
+      configurationSection = { "html", "css", "javascript" },
+      embeddedLanguages = {
+        css = true,
+        javascript = true
+      },
+      provideFormatter = true
+    }
+  - root_markers: package.json, .git
+  - settings: {}
+
+- jsonls:
+  - cmd: { "vscode-json-language-server", "--stdio" }
+  - filetypes: json, jsonc
+  - init_options: {
+      provideFormatter = true
+    }
+  - root_markers: .git
+
+- lua_ls:
+  - cmd: { "lua-language-server" }
+  - filetypes: lua
+  - root_markers: .luarc.json, .luarc.jsonc, .luacheckrc, .stylua.toml, stylua.toml, selene.toml, selene.yml, .git
+
+- marksman:
+  - cmd: { "marksman", "server" }
+  - filetypes: markdown, markdown.mdx
+  - root_markers: .marksman.toml, .git
+
+- pyright:
+  - cmd: { "pyright-langserver", "--stdio" }
+  - filetypes: python
+  - on_attach: <function @C:/Users/cerbe/AppData/Local/nvim-data/lazy/nvim-lspconfig/lsp/pyright.lua:43>
+  - root_markers: pyproject.toml, setup.py, setup.cfg, requirements.txt, Pipfile, pyrightconfig.json, .git
+  - settings: {
+      python = {
+        analysis = {
+          autoSearchPaths = true,
+          diagnosticMode = "openFilesOnly",
+          useLibraryCodeForTypes = true
+        }
+      }
+    }
+
+- rust_analyzer:
+  - before_init: <function @C:/Users/cerbe/AppData/Local/nvim-data/lazy/nvim-lspconfig/lsp/rust_analyzer.lua:108>
+  - capabilities: {
+      experimental = {
+        serverStatusNotification = true
+      }
+    }
+  - cmd: { "rust-analyzer" }
+  - filetypes: rust
+  - on_attach: <function @C:/Users/cerbe/AppData/Local/nvim-data/lazy/nvim-lspconfig/lsp/rust_analyzer.lua:114>
+  - root_dir: <function @C:/Users/cerbe/AppData/Local/nvim-data/lazy/nvim-lspconfig/lsp/rust_analyzer.lua:57>
+
+- tailwindcss:
+  - before_init: <function @C:/Users/cerbe/AppData/Local/nvim-data/lazy/nvim-lspconfig/lsp/tailwindcss.lua:97>
+  - cmd: { "tailwindcss-language-server", "--stdio" }
+  - filetypes: aspnetcorerazor, astro, astro-markdown, blade, clojure, django-html, htmldjango, edge, eelixir, elixir, ejs, erb, eruby, gohtml, gohtmltmpl, haml, handlebars, hbs, html, htmlangular, html-eex, heex, jade, leaf, liquid, markdown, mdx, mustache, njk, nunjucks, php, razor, slim, twig, css, less, postcss, sass, scss, stylus, sugarss, javascript, javascriptreact, reason, rescript, typescript, typescriptreact, vue, svelte, templ
+  - root_dir: <function @C:/Users/cerbe/AppData/Local/nvim-data/lazy/nvim-lspconfig/lsp/tailwindcss.lua:109>
+  - settings: {
+      tailwindCSS = {
+        classAttributes = { "class", "className", "class:list", "classList", "ngClass" },
+        includeLanguages = {
+          eelixir = "html-eex",
+          elixir = "phoenix-heex",
+          eruby = "erb",
+          heex = "phoenix-heex",
+          htmlangular = "html",
+          templ = "html"
+        },
+        lint = {
+          cssConflict = "warning",
+          invalidApply = "error",
+          invalidConfigPath = "error",
+          invalidScreen = "error",
+          invalidTailwindDirective = "error",
+          invalidVariant = "error",
+          recommendedVariantOrder = "warning"
+        },
+        validate = true
+      }
+    }
+  - workspace_required: true
+
+- ts_ls:
+  - cmd: { "typescript-language-server", "--stdio" }
+  - filetypes: javascript, javascriptreact, javascript.jsx, typescript, typescriptreact, typescript.tsx
+  - handlers: {
+      ["_typescript.rename"] = <function 1>
+    }
+  - init_options: {
+      hostInfo = "neovim"
+    }
+  - on_attach: <function @C:/Users/cerbe/AppData/Local/nvim-data/lazy/nvim-lspconfig/lsp/ts_ls.lua:100>
+  - root_markers: tsconfig.json, jsconfig.json, package.json, .git
+
+- yamlls:
+  - cmd: { "yaml-language-server", "--stdio" }
+  - filetypes: yaml, yaml.docker-compose, yaml.gitlab, yaml.helm-values
+  - root_markers: .git
+  - settings: {
+      redhat = {
+        telemetry = {
+          enabled = false
+        }
+      }
+    }
+
+
+vim.lsp: File Watcher ~
+- file watching "(workspace/didChangeWatchedFiles)" disabled on all clients
+
+vim.lsp: Position Encodings ~
+- No active clients
+
+==============================================================================
+vim.provider:                                                             6 ⚠️
+
+Clipboard (optional) ~
+- ✅ OK Clipboard tool found: win32yank
+
+Node.js provider (optional) ~
+- Node.js: v24.2.0
+
+- ⚠️ WARNING Missing "neovim" npm (or yarn, pnpm) package.
+  - ADVICE:
+    - Run in shell: npm install -g neovim
+    - Run in shell (if you use yarn): yarn global add neovim
+    - Run in shell (if you use pnpm): pnpm install -g neovim
+    - You may disable this provider (and warning) by adding `let g:loaded_node_provider = 0` to your init.vim
+
+Perl provider (optional) ~
+- ⚠️ WARNING No perl executable found
+  - ADVICE:
+    - See :help |provider-perl| for more information.
+    - You can disable this provider (and warning) by adding `let g:loaded_perl_provider = 0` to your init.vim
+- ⚠️ WARNING No usable perl executable found
+
+Python 3 provider (optional) ~
+- ⚠️ WARNING No Python executable found that can `import neovim`. Using the first available executable for diagnostics.
+- ⚠️ WARNING Could not load Python :
+  python3 not found in search path or not executable.
+  python3.13 not found in search path or not executable.
+  python3.12 not found in search path or not executable.
+  python3.11 not found in search path or not executable.
+  python3.10 not found in search path or not executable.
+  python3.9 not found in search path or not executable.
+  C:\Users\cerbe\AppData\Local\Programs\Python\Python312\python.EXE does not have the "neovim" module.
+  - ADVICE:
+    - See :help |provider-python| for more information.
+    - You can disable this provider (and warning) by adding `let g:loaded_python3_provider = 0` to your init.vim
+- Executable: Not found
+
+Python virtualenv ~
+- ✅ OK no $VIRTUAL_ENV
+
+Ruby provider (optional) ~
+- ⚠️ WARNING `ruby` and `gem` must be in $PATH.
+  - ADVICE:
+    - Install Ruby and verify that `ruby` and `gem` commands work.
+
+==============================================================================
+vim.treesitter:                                                             ✅
+
+Treesitter features ~
+- Treesitter ABI support: min 13, max 15
+- WASM parser support: false
+
+Treesitter parsers ~
+- ✅ OK Parser: astro                ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\astro.so
+- ✅ OK Parser: bash                 ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\bash.so
+- ✅ OK Parser: c                    ABI: 14, path: C:\Program Files\Neovim\lib\nvim\parser\c.dll
+- ✅ OK Parser: c                    ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\c.so
+- ✅ OK Parser: cmake                ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\cmake.so
+- ✅ OK Parser: cpp                  ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\cpp.so
+- ✅ OK Parser: css                  ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\css.so
+- ✅ OK Parser: dockerfile           ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\dockerfile.so
+- ✅ OK Parser: git_rebase           ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\git_rebase.so
+- ✅ OK Parser: gitcommit            ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\gitcommit.so
+- ✅ OK Parser: gitignore            ABI: 13, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\gitignore.so
+- ✅ OK Parser: go                   ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\go.so
+- ✅ OK Parser: gomod                ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\gomod.so
+- ✅ OK Parser: gosum                ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\gosum.so
+- ✅ OK Parser: gowork               ABI: 13, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\gowork.so
+- ✅ OK Parser: html                 ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\html.so
+- ✅ OK Parser: javascript           ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\javascript.so
+- ✅ OK Parser: json                 ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\json.so
+- ✅ OK Parser: jsonc                ABI: 13, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\jsonc.so
+- ✅ OK Parser: lua                  ABI: 14, path: C:\Program Files\Neovim\lib\nvim\parser\lua.dll
+- ✅ OK Parser: lua                  ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\lua.so
+- ✅ OK Parser: luadoc               ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\luadoc.so
+- ✅ OK Parser: luap                 ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\luap.so
+- ✅ OK Parser: markdown             ABI: 14, path: C:\Program Files\Neovim\lib\nvim\parser\markdown.dll
+- ✅ OK Parser: markdown             ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\markdown.so
+- ✅ OK Parser: markdown_inline      ABI: 14, path: C:\Program Files\Neovim\lib\nvim\parser\markdown_inline.dll
+- ✅ OK Parser: markdown_inline      ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\markdown_inline.so
+- ✅ OK Parser: prisma               ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\prisma.so
+- ✅ OK Parser: python               ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\python.so
+- ✅ OK Parser: query                ABI: 14, path: C:\Program Files\Neovim\lib\nvim\parser\query.dll
+- ✅ OK Parser: regex                ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\regex.so
+- ✅ OK Parser: rust                 ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\rust.so
+- ✅ OK Parser: scss                 ABI: 13, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\scss.so
+- ✅ OK Parser: sql                  ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\sql.so
+- ✅ OK Parser: toml                 ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\toml.so
+- ✅ OK Parser: tsx                  ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\tsx.so
+- ✅ OK Parser: typescript           ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\typescript.so
+- ✅ OK Parser: vim                  ABI: 14, path: C:\Program Files\Neovim\lib\nvim\parser\vim.dll
+- ✅ OK Parser: vim                  ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\vim.so
+- ✅ OK Parser: vimdoc               ABI: 14, path: C:\Program Files\Neovim\lib\nvim\parser\vimdoc.dll
+- ✅ OK Parser: vimdoc               ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\vimdoc.so
+- ✅ OK Parser: yaml                 ABI: 14, path: C:\Users\cerbe\AppData\Local\nvim-data\lazy\nvim-treesitter\parser\yaml.so
+

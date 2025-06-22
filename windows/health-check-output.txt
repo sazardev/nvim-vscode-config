@@ -1,0 +1,11 @@
+NEOVIM HEALTH CHECK REPORT
+Generated: 2025-06-21 19:20:04
+Neovim Version: 0.11.2+ga73904168a
+================================================================================
+
+Starting health check...
+Running healthchecks...
+
+
+================================================================================
+HEALTH CHECK COMPLETED

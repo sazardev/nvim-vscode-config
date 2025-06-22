@@ -1,0 +1,1022 @@
+
+line 4: redir! > health-output.txt
+line 5: silent! checkhealth
+Searching for "autoload/health/**.vim" in runtime path
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\autoload/health/**.vim"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\netrw\autoload/health/**.vim"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\matchit\autoload/health/**.vim"
+Searching for "C:\Program Files\Neovim\lib\nvim\autoload/health/**.vim"
+not found in runtime path: "autoload/health/**.vim"
+Searching for "lua/**/**/health/init.lua" in runtime path
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\lua/**/**/health/init.lua"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\netrw\lua/**/**/health/init.lua"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\matchit\lua/**/**/health/init.lua"
+Searching for "C:\Program Files\Neovim\lib\nvim\lua/**/**/health/init.lua"
+not found in runtime path: "lua/**/**/health/init.lua"
+Searching for "lua/**/**/health.lua" in runtime path
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\lua/**/**/health.lua"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\netrw\lua/**/**/health.lua"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\matchit\lua/**/**/health.lua"
+Searching for "C:\Program Files\Neovim\lib\nvim\lua/**/**/health.lua"
+Searching for "lua/" in runtime path
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\lua/"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\netrw\lua/"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\matchit\lua/"
+Searching for "C:\Program Files\Neovim\lib\nvim\lua/"
+Searching for "lua/" in runtime path
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\lua/"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\netrw\lua/"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\matchit\lua/"
+Searching for "C:\Program Files\Neovim\lib\nvim\lua/"
+Searching for "lua/" in runtime path
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\lua/"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\netrw\lua/"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\matchit\lua/"
+Searching for "C:\Program Files\Neovim\lib\nvim\lua/"
+Searching for "lua/" in runtime path
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\lua/"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\netrw\lua/"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\matchit\lua/"
+Searching for "C:\Program Files\Neovim\lib\nvim\lua/"
+Searching for "lua/" in runtime path
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\lua/"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\netrw\lua/"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\matchit\lua/"
+Searching for "C:\Program Files\Neovim\lib\nvim\lua/"
+Searching for "lua/" in runtime path
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\lua/"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\netrw\lua/"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\matchit\lua/"
+Searching for "C:\Program Files\Neovim\lib\nvim\lua/"
+line 5: sourcing "nvim_exec2() called at C:\Users\cerbe\Documents\terminal\nvim-vscode-config\windows\capture-health.vim:5"
+line 1: buffer 2
+Executing BufLeave Autocommands for "*"
+autocommand call s:Remove_Matches()
+
+Executing: call s:Remove_Matches()
+calling <SNR>9_Remove_Matches()
+
+line 1:   if exists('w:paren_hl_on') && w:paren_hl_on
+line 2:     while !empty(w:matchparen_ids)
+line 3:       silent! call remove(w:matchparen_ids, 0)->matchdelete()
+line 4:     endwhile
+line 5:     let w:paren_hl_on = 0
+line 6:   endif
+<SNR>9_Remove_Matches returning #0
+
+continuing in BufLeave Autocommands for "*"
+
+Executing BufLeave Autocommands for "*"
+autocommand if &ft != "netrw"|let w:netrw_prvfile= expand("%:p")|endif
+
+Executing: if &ft != "netrw"|let w:netrw_prvfile= expand("%:p")|endif
+Executing: let w:netrw_prvfile= expand("%:p")|endif
+Executing: endif
+Executing BufEnter Autocommands for "*"
+autocommand sil call s:LocalBrowse(expand("<amatch>"))
+
+Executing: sil call s:LocalBrowse(expand("<amatch>"))
+calling <SNR>11_LocalBrowse('')
+
+line 1:     " do not trigger in the terminal
+line 2:     " https://github.com/vim/vim/issues/16463
+line 3:     if &buftype ==# 'terminal'
+line 4:         return
+line 5:     endif
+line 6: 
+line 7:     if !exists("s:vimentered")
+line 8:         " If s:vimentered doesn't exist, then the VimEnter event hasn't fired.  It will,
+line 9:         " and so s:VimEnter() will then be calling this routine, but this time with s:vimentered defined.
+line 10:         return
+<SNR>11_LocalBrowse returning #0
+
+continuing in BufEnter Autocommands for "*"
+
+Executing BufWinEnter Autocommands for "*"
+autocommand autocmd SafeState * ++once call s:Highlight_Matching_Pair()
+
+Executing: autocmd SafeState * ++once call s:Highlight_Matching_Pair()
+line 1: unlet! b:keymap_name
+finished sourcing nvim_exec2() called at C:\Users\cerbe\Documents\terminal\nvim-vscode-config\windows\capture-health.vim:5
+continuing in C:\Users\cerbe\Documents\terminal\nvim-vscode-config\windows\capture-health.vim
+Executing BufFilePost Autocommands for "*"
+autocommand <Lua 76: C:\Program Files\Neovim\share\nvim\runtime\plugin\editorconfig.lua:4>
+
+Executing: 
+Running healthchecks...
+line 5: version
+
+NVIM v0.11.2
+Build type: Release
+LuaJIT 2.1.1741730670
+
+   system vimrc file: "$VIM/sysinit.vim"
+  fall-back for $VIM: "C:/Program Files (x86)/nvim/share/nvim"
+
+Run :checkhealth for more info
+Executing command: "'cmd.exe' '/s' '/c' '"echo"'"
+
+
+Searching for "autoload/remote/host.vim" in runtime path
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\autoload/remote/host.vim"
+line 5: sourcing "C:\Program Files\Neovim\share\nvim\runtime\autoload\remote\host.vim"
+line 1: let s:hosts = {}
+line 2: let s:plugin_patterns = {}
+line 3: let s:plugins_for_host = {}
+line 4: 
+line 5: " Register a host by associating it with a factory(funcref)
+line 6: function! remote#host#Register(name, pattern, factory) abort
+line 14: 
+line 15: " Register a clone to an existing host. The new host will use the same factory
+line 16: " as `source`, but it will run as a different process. This can be used by
+line 17: " plugins that should run isolated from other plugins created for the same host
+line 18: " type
+line 19: function! remote#host#RegisterClone(name, orig_name) abort
+line 31: 
+line 32: " Get a host channel, bootstrapping it if necessary
+line 33: function! remote#host#Require(name) abort
+line 48: 
+line 49: function! remote#host#IsRunning(name) abort
+line 55: 
+line 56: " Example of registering a Python plugin with two commands (one async), one
+line 57: " autocmd (async) and one function (sync):
+line 58: "
+line 59: " let s:plugin_path = expand('<sfile>:p:h').'/nvim_plugin.py'
+line 60: " call remote#host#RegisterPlugin('python', s:plugin_path, [
+line 61: "   \ {'type': 'command', 'name': 'PyCmd', 'sync': 1, 'opts': {}},
+line 62: "   \ {'type': 'command', 'name': 'PyAsyncCmd', 'sync': 0, 'opts': {'eval': 'cursor()'}},
+line 63: "   \ {'type': 'autocmd', 'name': 'BufEnter', 'sync': 0, 'opts': {'eval': 'expand("<afile>")'}},
+line 64: "   \ {'type': 'function', 'name': 'PyFunc', 'sync': 1, 'opts': {}}
+line 65: "   \ ])
+line 66: "
+line 67: " The third item in a declaration is a boolean: non zero means the command,
+line 68: " autocommand or function will be executed synchronously with rpcrequest.
+line 69: function! remote#host#RegisterPlugin(host, path, specs) abort
+line 111: 
+line 112: function! s:RegistrationCommands(host) abort
+line 155: 
+line 156: function! remote#host#UpdateRemotePlugins() abort
+line 176: 
+line 177: function! remote#host#PluginsForHost(host) abort
+line 183: 
+line 184: function! remote#host#LoadErrorForHost(host, log) abort
+line 190: 
+line 191: " Registration of standard hosts
+line 192: 
+line 193: " Python3
+line 194: call remote#host#Register('python3', '*', function('provider#python3#Require'))
+calling remote#host#Register('python3', '*', function('provider#python3#Require'))
+
+line 1:   let s:hosts[a:name] = {'factory': a:factory, 'channel': 0, 'initialized': 0}
+line 2:   let s:plugin_patterns[a:name] = a:pattern
+line 3:   if type(a:factory) == type(1) && a:factory
+line 4:     " Passed a channel directly
+line 5:     let s:hosts[a:name].channel = a:factory
+line 6:   endif
+remote#host#Register returning #0
+
+continuing in C:\Program Files\Neovim\share\nvim\runtime\autoload\remote\host.vim
+
+line 196: 
+line 197: " Ruby
+line 198: call remote#host#Register('ruby', '*.rb', function('provider#ruby#Require'))
+calling remote#host#Register('ruby', '*.rb', function('provider#ruby#Require'))
+
+line 1:   let s:hosts[a:name] = {'factory': a:factory, 'channel': 0, 'initialized': 0}
+line 2:   let s:plugin_patterns[a:name] = a:pattern
+line 3:   if type(a:factory) == type(1) && a:factory
+line 4:     " Passed a channel directly
+line 5:     let s:hosts[a:name].channel = a:factory
+line 6:   endif
+remote#host#Register returning #0
+
+continuing in C:\Program Files\Neovim\share\nvim\runtime\autoload\remote\host.vim
+
+line 200: 
+line 201: " nodejs
+line 202: call remote#host#Register('node', '*', function('provider#node#Require'))
+calling remote#host#Register('node', '*', function('provider#node#Require'))
+
+line 1:   let s:hosts[a:name] = {'factory': a:factory, 'channel': 0, 'initialized': 0}
+line 2:   let s:plugin_patterns[a:name] = a:pattern
+line 3:   if type(a:factory) == type(1) && a:factory
+line 4:     " Passed a channel directly
+line 5:     let s:hosts[a:name].channel = a:factory
+line 6:   endif
+remote#host#Register returning #0
+
+continuing in C:\Program Files\Neovim\share\nvim\runtime\autoload\remote\host.vim
+
+line 204: 
+line 205: " perl
+line 206: call remote#host#Register('perl', '*', function('provider#perl#Require'))
+calling remote#host#Register('perl', '*', function('provider#perl#Require'))
+
+line 1:   let s:hosts[a:name] = {'factory': a:factory, 'channel': 0, 'initialized': 0}
+line 2:   let s:plugin_patterns[a:name] = a:pattern
+line 3:   if type(a:factory) == type(1) && a:factory
+line 4:     " Passed a channel directly
+line 5:     let s:hosts[a:name].channel = a:factory
+line 6:   endif
+remote#host#Register returning #0
+
+continuing in C:\Program Files\Neovim\share\nvim\runtime\autoload\remote\host.vim
+
+finished sourcing C:\Program Files\Neovim\share\nvim\runtime\autoload\remote\host.vim
+continuing in C:\Users\cerbe\Documents\terminal\nvim-vscode-config\windows\capture-health.vim
+calling remote#host#PluginsForHost('python3')
+
+line 1:   if !has_key(s:plugins_for_host, a:host)
+line 2:     let s:plugins_for_host[a:host] = []
+line 3:   end
+line 4:   return s:plugins_for_host[a:host]
+remote#host#PluginsForHost returning []
+
+continuing in C:\Users\cerbe\Documents\terminal\nvim-vscode-config\windows\capture-health.vim
+
+Executing command: "'C:\Users\cerbe\AppData\Local\Microsoft\WinGet\Links\rg.EXE' '-V'"
+
+
+Searching for "autoload/provider/clipboard.vim" in runtime path
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\autoload/provider/clipboard.vim"
+line 5: sourcing "C:\Program Files\Neovim\share\nvim\runtime\autoload\provider\clipboard.vim"
+line 1: " The clipboard provider uses shell commands to communicate with the clipboard.
+line 2: " The provider function will only be registered if a supported command is
+line 3: " available.
+line 4: 
+line 5: if exists('g:loaded_clipboard_provider')
+line 6:   finish
+line 7: endif
+line 8: " Default to 0.  provider#clipboard#Executable() may set 2.
+line 9: " To force a reload:
+line 10: "   :unlet g:loaded_clipboard_provider
+line 11: "   :runtime autoload/provider/clipboard.vim
+line 12: let g:loaded_clipboard_provider = 0
+line 13: 
+line 14: let s:copy = {}
+line 15: let s:paste = {}
+line 16: let s:clipboard = {}
+line 17: 
+line 18: " When caching is enabled, store the jobid of the xclip/xsel process keeping
+line 19: " ownership of the selection, so we know how long the cache is valid.
+line 20: let s:selection = { 'owner': 0, 'data': [], 'stderr_buffered': v:true }
+line 21: 
+line 22: function! s:selection.on_exit(jobid, data, event) abort
+line 35: 
+line 36: let s:selections = { '*': s:selection, '+': copy(s:selection) }
+line 37: 
+line 38: function! s:try_cmd(cmd, ...) abort
+line 51: 
+line 52: " Returns TRUE if `cmd` exits with success, else FALSE.
+line 53: function! s:cmd_ok(cmd) abort
+line 57: 
+line 58: function! s:split_cmd(cmd) abort
+line 61: 
+line 62: function! s:set_osc52() abort
+line 69: 
+line 70: function! s:set_pbcopy() abort
+line 78: 
+line 79: function! s:set_wayland() abort
+line 86: 
+line 87: function! s:set_wayclip() abort
+line 94: 
+line 95: function! s:set_xsel() abort
+line 102: 
+line 103: function! s:set_xclip() abort
+line 110: 
+line 111: function! s:set_lemonade() abort
+line 118: 
+line 119: function! s:set_doitclient() abort
+line 126: 
+line 127: function! s:set_win32yank() abort
+line 139: 
+line 140: function! s:set_putclip() abort
+line 147: 
+line 148: function! s:set_clip() abort
+line 155: 
+line 156: function! s:set_termux() abort
+line 163: 
+line 164: function! s:set_tmux() abort
+line 176: 
+line 177: let s:cache_enabled = 1
+line 178: let s:err = ''
+line 179: 
+line 180: function! provider#clipboard#Error() abort
+line 183: 
+line 184: function! provider#clipboard#Executable() abort
+line 269: 
+line 270: function! s:clipboard.get(reg) abort
+line 287: 
+line 288: function! s:clipboard.set(lines, regtype, reg) abort
+line 346: 
+line 347: function! provider#clipboard#Call(method, args) abort
+line 358: 
+line 359: " eval_has_provider() decides based on this variable.
+line 360: let g:loaded_clipboard_provider = empty(provider#clipboard#Executable()) ? 0 : 2
+calling provider#clipboard#Executable()
+
+line 1:   " Setting g:clipboard to v:false explicitly opts-in to using the "builtin" clipboard providers below
+line 2:   if exists('g:clipboard') && g:clipboard isnot# v:false
+line 3:     if v:t_string ==# type(g:clipboard)
+line 4:       " Handle string form of g:clipboard for all builtin providers
+line 5:       if 'osc52' == g:clipboard
+line 6:         " User opted-in to OSC 52 by manually setting g:clipboard.
+line 7:         return s:set_osc52()
+line 8:       elseif 'pbcopy' == g:clipboard
+line 9:         return s:set_pbcopy()
+line 10:       elseif 'wl-copy' == g:clipboard
+line 11:         return s:set_wayland()
+line 12:       elseif 'wayclip' == g:clipboard
+line 13:         return s:set_wayclip()
+line 14:       elseif 'xsel' == g:clipboard
+line 15:         return s:set_xsel()
+line 16:       elseif 'xclip' == g:clipboard
+line 17:         return s:set_xclip()
+line 18:       elseif 'lemonade' == g:clipboard
+line 19:         return s:set_lemonade()
+line 20:       elseif 'doitclient' == g:clipboard
+line 21:         return s:set_doitclient()
+line 22:       elseif 'win32yank' == g:clipboard
+line 23:         return s:set_win32yank()
+line 24:       elseif 'putclip' == g:clipboard
+line 25:         return s:set_putclip()
+line 26:       elseif 'clip' == g:clipboard
+line 27:         return s:set_clip()
+line 28:       elseif 'termux' == g:clipboard
+line 29:         return s:set_termux()
+line 30:       elseif 'tmux' == g:clipboard
+line 31:         return s:set_tmux()
+line 32:       endif
+line 33:     endif
+line 34: 
+line 35:     if type({}) isnot# type(g:clipboard) || type({}) isnot# type(get(g:clipboard, 'copy', v:null)) || type({}) isnot# type(get(g:clipboard, 'paste', v:null))
+line 38:       let s:err = 'clipboard: invalid g:clipboard'
+line 39:       return ''
+line 40:     endif
+line 41: 
+line 42:     let s:copy = {}
+line 43:     let s:copy['+'] = s:split_cmd(get(g:clipboard.copy, '+', v:null))
+line 44:     let s:copy['*'] = s:split_cmd(get(g:clipboard.copy, '*', v:null))
+line 45: 
+line 46:     let s:paste = {}
+line 47:     let s:paste['+'] = s:split_cmd(get(g:clipboard.paste, '+', v:null))
+line 48:     let s:paste['*'] = s:split_cmd(get(g:clipboard.paste, '*', v:null))
+line 49: 
+line 50:     let s:cache_enabled = get(g:clipboard, 'cache_enabled', 0)
+line 51:     return get(g:clipboard, 'name', 'g:clipboard')
+line 52:   elseif has('mac')
+line 53:     return s:set_pbcopy()
+line 54:   elseif !empty($WAYLAND_DISPLAY) && executable('wl-copy') && executable('wl-paste')
+line 55:     return s:set_wayland()
+line 56:   elseif !empty($WAYLAND_DISPLAY) && executable('waycopy') && executable('waypaste')
+line 57:     return s:set_wayclip()
+line 58:   elseif !empty($DISPLAY) && executable('xsel') && s:cmd_ok('xsel -o -b')
+line 59:     return s:set_xsel()
+line 60:   elseif !empty($DISPLAY) && executable('xclip')
+line 61:     return s:set_xclip()
+line 62:   elseif executable('lemonade')
+line 63:     return s:set_lemonade()
+line 64:   elseif executable('doitclient')
+line 65:     return s:set_doitclient()
+line 66:   elseif executable('win32yank.exe')
+line 67:     return s:set_win32yank()
+calling <SNR>25_set_win32yank()
+
+line 1:   if has('wsl') && getftype(exepath('win32yank.exe')) == 'link'
+line 2:     let win32yank = resolve(exepath('win32yank.exe'))
+line 3:   else
+line 4:     let win32yank = 'win32yank.exe'
+line 5:   endif
+line 6:   let s:copy['+'] = [win32yank, '-i', '--crlf']
+line 7:   let s:paste['+'] = [win32yank, '-o', '--lf']
+line 8:   let s:copy['*'] = s:copy['+']
+line 9:   let s:paste['*'] = s:paste['+']
+line 10:   return 'win32yank'
+<SNR>25_set_win32yank returning 'win32yank'
+
+continuing in provider#clipboard#Executable
+
+provider#clipboard#Executable returning 'win32yank'
+
+continuing in C:\Program Files\Neovim\share\nvim\runtime\autoload\provider\clipboard.vim
+
+finished sourcing C:\Program Files\Neovim\share\nvim\runtime\autoload\provider\clipboard.vim
+continuing in C:\Users\cerbe\Documents\terminal\nvim-vscode-config\windows\capture-health.vim
+calling provider#clipboard#Executable()
+
+line 1:   " Setting g:clipboard to v:false explicitly opts-in to using the "builtin" clipboard providers below
+line 2:   if exists('g:clipboard') && g:clipboard isnot# v:false
+line 3:     if v:t_string ==# type(g:clipboard)
+line 4:       " Handle string form of g:clipboard for all builtin providers
+line 5:       if 'osc52' == g:clipboard
+line 6:         " User opted-in to OSC 52 by manually setting g:clipboard.
+line 7:         return s:set_osc52()
+line 8:       elseif 'pbcopy' == g:clipboard
+line 9:         return s:set_pbcopy()
+line 10:       elseif 'wl-copy' == g:clipboard
+line 11:         return s:set_wayland()
+line 12:       elseif 'wayclip' == g:clipboard
+line 13:         return s:set_wayclip()
+line 14:       elseif 'xsel' == g:clipboard
+line 15:         return s:set_xsel()
+line 16:       elseif 'xclip' == g:clipboard
+line 17:         return s:set_xclip()
+line 18:       elseif 'lemonade' == g:clipboard
+line 19:         return s:set_lemonade()
+line 20:       elseif 'doitclient' == g:clipboard
+line 21:         return s:set_doitclient()
+line 22:       elseif 'win32yank' == g:clipboard
+line 23:         return s:set_win32yank()
+line 24:       elseif 'putclip' == g:clipboard
+line 25:         return s:set_putclip()
+line 26:       elseif 'clip' == g:clipboard
+line 27:         return s:set_clip()
+line 28:       elseif 'termux' == g:clipboard
+line 29:         return s:set_termux()
+line 30:       elseif 'tmux' == g:clipboard
+line 31:         return s:set_tmux()
+line 32:       endif
+line 33:     endif
+line 34: 
+line 35:     if type({}) isnot# type(g:clipboard) || type({}) isnot# type(get(g:clipboard, 'copy', v:null)) || type({}) isnot# type(get(g:clipboard, 'paste', v:null))
+line 38:       let s:err = 'clipboard: invalid g:clipboard'
+line 39:       return ''
+line 40:     endif
+line 41: 
+line 42:     let s:copy = {}
+line 43:     let s:copy['+'] = s:split_cmd(get(g:clipboard.copy, '+', v:null))
+line 44:     let s:copy['*'] = s:split_cmd(get(g:clipboard.copy, '*', v:null))
+line 45: 
+line 46:     let s:paste = {}
+line 47:     let s:paste['+'] = s:split_cmd(get(g:clipboard.paste, '+', v:null))
+line 48:     let s:paste['*'] = s:split_cmd(get(g:clipboard.paste, '*', v:null))
+line 49: 
+line 50:     let s:cache_enabled = get(g:clipboard, 'cache_enabled', 0)
+line 51:     return get(g:clipboard, 'name', 'g:clipboard')
+line 52:   elseif has('mac')
+line 53:     return s:set_pbcopy()
+line 54:   elseif !empty($WAYLAND_DISPLAY) && executable('wl-copy') && executable('wl-paste')
+line 55:     return s:set_wayland()
+line 56:   elseif !empty($WAYLAND_DISPLAY) && executable('waycopy') && executable('waypaste')
+line 57:     return s:set_wayclip()
+line 58:   elseif !empty($DISPLAY) && executable('xsel') && s:cmd_ok('xsel -o -b')
+line 59:     return s:set_xsel()
+line 60:   elseif !empty($DISPLAY) && executable('xclip')
+line 61:     return s:set_xclip()
+line 62:   elseif executable('lemonade')
+line 63:     return s:set_lemonade()
+line 64:   elseif executable('doitclient')
+line 65:     return s:set_doitclient()
+line 66:   elseif executable('win32yank.exe')
+line 67:     return s:set_win32yank()
+calling <SNR>25_set_win32yank()
+
+line 1:   if has('wsl') && getftype(exepath('win32yank.exe')) == 'link'
+line 2:     let win32yank = resolve(exepath('win32yank.exe'))
+line 3:   else
+line 4:     let win32yank = 'win32yank.exe'
+line 5:   endif
+line 6:   let s:copy['+'] = [win32yank, '-i', '--crlf']
+line 7:   let s:paste['+'] = [win32yank, '-o', '--lf']
+line 8:   let s:copy['*'] = s:copy['+']
+line 9:   let s:paste['*'] = s:paste['+']
+line 10:   return 'win32yank'
+<SNR>25_set_win32yank returning 'win32yank'
+
+continuing in provider#clipboard#Executable
+
+provider#clipboard#Executable returning 'win32yank'
+
+continuing in C:\Users\cerbe\Documents\terminal\nvim-vscode-config\windows\capture-health.vim
+
+Executing command: "'C:\Program Files\nodejs\node.EXE' '-v'"
+
+
+Searching for "autoload/provider/node.vim" in runtime path
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\autoload/provider/node.vim"
+line 5: sourcing "C:\Program Files\Neovim\share\nvim\runtime\autoload\provider\node.vim"
+line 1: if exists('g:loaded_node_provider')
+line 2:   finish
+line 3: endif
+line 4: let g:loaded_node_provider = 0
+line 5: 
+line 6: function! s:is_minimum_version(version, min_version) abort
+line 20: 
+line 21: let s:NodeHandler = { 'stdout_buffered': v:true, 'result': '' }
+line 25: function! s:NodeHandler.on_exit(job_id, data, event) abort
+line 30: 
+line 31: " Support for --inspect-brk requires node 6.12+ or 7.6+ or 8+
+line 32: " Return 1 if it is supported
+line 33: " Return 0 otherwise
+line 34: function! provider#node#can_inspect() abort
+line 45: 
+line 46: function! provider#node#Detect() abort
+line 110: 
+line 111: function! provider#node#Prog() abort
+line 114: 
+line 115: function! provider#node#Require(host) abort
+line 131: 
+line 132: function! provider#node#Call(method, args) abort
+line 151: 
+line 152: 
+line 153: let s:err = ''
+line 154: let [s:prog, s:_] = provider#node#Detect()
+calling provider#node#Detect()
+
+line 1:   let minver = '6.0.0'
+line 2:   if exists('g:node_host_prog')
+line 3:     return [expand(g:node_host_prog, v:true), '']
+line 4:   endif
+line 5:   if !executable('node')
+line 6:     return ['', 'node not found (or not executable)']
+line 7:   endif
+line 8:   if !s:is_minimum_version(v:null, minver)
+calling <SNR>26_is_minimum_version(v:null, '6.0.0')
+
+line 1:   if empty(a:version)
+line 2:     let nodejs_version = get(split(system(['node', '-v']), "\n"), 0, '')
+Executing command: "'C:\Program Files\nodejs\node.EXE' '-v'"
+
+
+line 3:     if v:shell_error || nodejs_version[0] !=# 'v'
+line 4:       return 0
+line 5:     endif
+line 6:   else
+line 7:     let nodejs_version = a:version
+line 8:   endif
+line 9:   " Remove surrounding junk.  Example: 'v4.12.0' => '4.12.0'
+line 10:   let nodejs_version = matchstr(nodejs_version, '\(\d\.\?\)\+')
+line 11:   " [major, minor, patch]
+line 12:   return !v:lua.vim.version.lt(nodejs_version, a:min_version)
+<SNR>26_is_minimum_version returning #1
+
+continuing in provider#node#Detect
+
+line 9:     return ['', printf('node version %s not found', minver)]
+line 10:   endif
+line 11: 
+line 12:   let npm_opts = {}
+line 13:   if executable('npm')
+line 14:     let npm_opts = deepcopy(s:NodeHandler)
+line 15:     let npm_opts.entry_point = '/neovim/bin/cli.js'
+line 16:     let npm_opts.job_id = jobstart('npm --loglevel silent root -g', npm_opts)
+line 17:   endif
+line 18: 
+line 19:   let yarn_opts = {}
+line 20:   if executable('yarn')
+line 21:     let yarn_opts = deepcopy(s:NodeHandler)
+line 22:     let yarn_opts.entry_point = '/node_modules/neovim/bin/cli.js'
+line 23:     " `yarn global dir` is slow (> 250ms), try the default path first
+line 24:     " https://github.com/yarnpkg/yarn/issues/2049#issuecomment-263183768
+line 25:     let yarn_config_dir = has('win32') ? '/AppData/Local/Yarn/Data' : '/.config/yarn'
+line 26:     let yarn_default_path = $HOME . yarn_config_dir . '/global/' . yarn_opts.entry_point
+line 27:     if filereadable(yarn_default_path)
+line 28:       return [yarn_default_path, '']
+line 29:     endif
+line 30:     let yarn_opts.job_id = jobstart('yarn global dir', yarn_opts)
+line 31:   endif
+line 32: 
+line 33:   let pnpm_opts = {}
+line 34:   if executable('pnpm')
+line 35:     let pnpm_opts = deepcopy(s:NodeHandler)
+line 36:     let pnpm_opts.entry_point = '/neovim/bin/cli.js'
+line 37:     let pnpm_opts.job_id = jobstart('pnpm --loglevel silent root -g', pnpm_opts)
+line 38:   endif
+line 39: 
+line 40:   " npm returns the directory faster, so let's check that first
+line 41:   if !empty(npm_opts)
+line 42:     let result = jobwait([npm_opts.job_id])
+calling 4(3, 0, 'exit')
+
+line 1:   let bin_dir = join(get(self, 'stdout', []), '')
+line 2:   let entry_point = bin_dir . self.entry_point
+line 3:   let self.result = filereadable(entry_point) ? entry_point : ''
+4 returning #0
+
+continuing in provider#node#Detect
+
+line 43:     if result[0] == 0 && npm_opts.result != ''
+line 44:       return [npm_opts.result, '']
+line 45:     endif
+line 46:   endif
+line 47: 
+line 48:   if !empty(yarn_opts)
+line 49:     let result = jobwait([yarn_opts.job_id])
+line 50:     if result[0] == 0 && yarn_opts.result != ''
+line 51:       return [yarn_opts.result, '']
+line 52:     endif
+line 53:   endif
+line 54: 
+line 55:   if !empty(pnpm_opts)
+line 56:     let result = jobwait([pnpm_opts.job_id])
+line 57:     if result[0] == 0 && pnpm_opts.result != ''
+line 58:       return [pnpm_opts.result, '']
+line 59:     endif
+line 60:   endif
+line 61: 
+line 62:   return ['', 'failed to detect node']
+provider#node#Detect returning ['', 'failed to detect node']
+
+continuing in C:\Program Files\Neovim\share\nvim\runtime\autoload\provider\node.vim
+
+line 155: let g:loaded_node_provider = empty(s:prog) ? 0 : 2
+line 156: 
+line 157: if g:loaded_node_provider != 2
+line 158:   let s:err = 'Cannot find the "neovim" node package. Try :checkhealth'
+line 159: endif
+line 160: 
+line 161: call remote#host#RegisterPlugin('node-provider', 'node', [])
+calling remote#host#RegisterPlugin('node-provider', 'node', [])
+
+line 1:   let plugins = remote#host#PluginsForHost(a:host)
+calling remote#host#PluginsForHost('node-provider')
+
+line 1:   if !has_key(s:plugins_for_host, a:host)
+line 2:     let s:plugins_for_host[a:host] = []
+line 3:   end
+line 4:   return s:plugins_for_host[a:host]
+remote#host#PluginsForHost returning []
+
+continuing in remote#host#RegisterPlugin
+
+line 2: 
+line 3:   for plugin in plugins
+line 4:     if plugin.path == a:path
+line 5:       throw 'Plugin "'.a:path.'" is already registered'
+line 6:     endif
+line 7:   endfor
+line 8: 
+line 9:   if has_key(s:hosts, a:host) && remote#host#IsRunning(a:host)
+line 10:     " For now we won't allow registration of plugins when the host is already
+line 11:     " running.
+line 12:     throw 'Host "'.a:host.'" is already running'
+line 13:   endif
+line 14: 
+line 15:   for spec in a:specs
+line 16:     let type = spec.type
+line 17:     let name = spec.name
+line 18:     let sync = spec.sync
+line 19:     let opts = spec.opts
+line 20:     let rpc_method = a:path
+line 21:     if type == 'command'
+line 22:       let rpc_method .= ':command:'.name
+line 23:       call remote#define#CommandOnHost(a:host, rpc_method, sync, name, opts)
+line 24:     elseif type == 'autocmd'
+line 25:       " Since multiple handlers can be attached to the same autocmd event by a
+line 26:       " single plugin, we need a way to uniquely identify the rpc method to
+line 27:       " call.  The solution is to append the autocmd pattern to the method
+line 28:       " name(This still has a limit: one handler per event/pattern combo, but
+line 29:       " there's no need to allow plugins define multiple handlers in that case)
+line 30:       let rpc_method .= ':autocmd:'.name.':'.get(opts, 'pattern', '*')
+line 31:       call remote#define#AutocmdOnHost(a:host, rpc_method, sync, name, opts)
+line 32:     elseif type == 'function'
+line 33:       let rpc_method .= ':function:'.name
+line 34:       call remote#define#FunctionOnHost(a:host, rpc_method, sync, name, opts)
+line 35:     else
+line 36:       echoerr 'Invalid declaration type: '.type
+line 37:     endif
+line 38:   endfor
+line 39: 
+line 40:   call add(plugins, {'path': a:path, 'specs': a:specs})
+remote#host#RegisterPlugin returning #0
+
+continuing in C:\Program Files\Neovim\share\nvim\runtime\autoload\provider\node.vim
+
+finished sourcing C:\Program Files\Neovim\share\nvim\runtime\autoload\provider\node.vim
+continuing in C:\Users\cerbe\Documents\terminal\nvim-vscode-config\windows\capture-health.vim
+calling provider#node#can_inspect()
+
+line 1:   if !executable('node')
+line 2:     return 0
+line 3:   endif
+line 4:   let ver = get(split(system(['node', '-v']), "\n"), 0, '')
+Executing command: "'C:\Program Files\nodejs\node.EXE' '-v'"
+
+
+line 5:   if v:shell_error || ver[0] !=# 'v'
+line 6:     return 0
+line 7:   endif
+line 8:   return (ver[1] ==# '6' && s:is_minimum_version(ver, '6.12.0')) || s:is_minimum_version(ver, '7.6.0')
+calling <SNR>26_is_minimum_version('v24.2.0', '7.6.0')
+
+line 1:   if empty(a:version)
+line 2:     let nodejs_version = get(split(system(['node', '-v']), "\n"), 0, '')
+line 3:     if v:shell_error || nodejs_version[0] !=# 'v'
+line 4:       return 0
+line 5:     endif
+line 6:   else
+line 7:     let nodejs_version = a:version
+line 8:   endif
+line 9:   " Remove surrounding junk.  Example: 'v4.12.0' => '4.12.0'
+line 10:   let nodejs_version = matchstr(nodejs_version, '\(\d\.\?\)\+')
+line 11:   " [major, minor, patch]
+line 12:   return !v:lua.vim.version.lt(nodejs_version, a:min_version)
+<SNR>26_is_minimum_version returning #1
+
+continuing in provider#node#can_inspect
+
+provider#node#can_inspect returning #1
+
+continuing in C:\Users\cerbe\Documents\terminal\nvim-vscode-config\windows\capture-health.vim
+
+calling provider#node#Detect()
+
+line 1:   let minver = '6.0.0'
+line 2:   if exists('g:node_host_prog')
+line 3:     return [expand(g:node_host_prog, v:true), '']
+line 4:   endif
+line 5:   if !executable('node')
+line 6:     return ['', 'node not found (or not executable)']
+line 7:   endif
+line 8:   if !s:is_minimum_version(v:null, minver)
+calling <SNR>26_is_minimum_version(v:null, '6.0.0')
+
+line 1:   if empty(a:version)
+line 2:     let nodejs_version = get(split(system(['node', '-v']), "\n"), 0, '')
+Executing command: "'C:\Program Files\nodejs\node.EXE' '-v'"
+
+
+line 3:     if v:shell_error || nodejs_version[0] !=# 'v'
+line 4:       return 0
+line 5:     endif
+line 6:   else
+line 7:     let nodejs_version = a:version
+line 8:   endif
+line 9:   " Remove surrounding junk.  Example: 'v4.12.0' => '4.12.0'
+line 10:   let nodejs_version = matchstr(nodejs_version, '\(\d\.\?\)\+')
+line 11:   " [major, minor, patch]
+line 12:   return !v:lua.vim.version.lt(nodejs_version, a:min_version)
+<SNR>26_is_minimum_version returning #1
+
+continuing in provider#node#Detect
+
+line 9:     return ['', printf('node version %s not found', minver)]
+line 10:   endif
+line 11: 
+line 12:   let npm_opts = {}
+line 13:   if executable('npm')
+line 14:     let npm_opts = deepcopy(s:NodeHandler)
+line 15:     let npm_opts.entry_point = '/neovim/bin/cli.js'
+line 16:     let npm_opts.job_id = jobstart('npm --loglevel silent root -g', npm_opts)
+line 17:   endif
+line 18: 
+line 19:   let yarn_opts = {}
+line 20:   if executable('yarn')
+line 21:     let yarn_opts = deepcopy(s:NodeHandler)
+line 22:     let yarn_opts.entry_point = '/node_modules/neovim/bin/cli.js'
+line 23:     " `yarn global dir` is slow (> 250ms), try the default path first
+line 24:     " https://github.com/yarnpkg/yarn/issues/2049#issuecomment-263183768
+line 25:     let yarn_config_dir = has('win32') ? '/AppData/Local/Yarn/Data' : '/.config/yarn'
+line 26:     let yarn_default_path = $HOME . yarn_config_dir . '/global/' . yarn_opts.entry_point
+line 27:     if filereadable(yarn_default_path)
+line 28:       return [yarn_default_path, '']
+line 29:     endif
+line 30:     let yarn_opts.job_id = jobstart('yarn global dir', yarn_opts)
+line 31:   endif
+line 32: 
+line 33:   let pnpm_opts = {}
+line 34:   if executable('pnpm')
+line 35:     let pnpm_opts = deepcopy(s:NodeHandler)
+line 36:     let pnpm_opts.entry_point = '/neovim/bin/cli.js'
+line 37:     let pnpm_opts.job_id = jobstart('pnpm --loglevel silent root -g', pnpm_opts)
+line 38:   endif
+line 39: 
+line 40:   " npm returns the directory faster, so let's check that first
+line 41:   if !empty(npm_opts)
+line 42:     let result = jobwait([npm_opts.job_id])
+calling 4(4, 0, 'exit')
+
+line 1:   let bin_dir = join(get(self, 'stdout', []), '')
+line 2:   let entry_point = bin_dir . self.entry_point
+line 3:   let self.result = filereadable(entry_point) ? entry_point : ''
+4 returning #0
+
+continuing in provider#node#Detect
+
+line 43:     if result[0] == 0 && npm_opts.result != ''
+line 44:       return [npm_opts.result, '']
+line 45:     endif
+line 46:   endif
+line 47: 
+line 48:   if !empty(yarn_opts)
+line 49:     let result = jobwait([yarn_opts.job_id])
+line 50:     if result[0] == 0 && yarn_opts.result != ''
+line 51:       return [yarn_opts.result, '']
+line 52:     endif
+line 53:   endif
+line 54: 
+line 55:   if !empty(pnpm_opts)
+line 56:     let result = jobwait([pnpm_opts.job_id])
+line 57:     if result[0] == 0 && pnpm_opts.result != ''
+line 58:       return [pnpm_opts.result, '']
+line 59:     endif
+line 60:   endif
+line 61: 
+line 62:   return ['', 'failed to detect node']
+provider#node#Detect returning ['', 'failed to detect node']
+
+continuing in C:\Users\cerbe\Documents\terminal\nvim-vscode-config\windows\capture-health.vim
+
+Searching for "parser/*" in runtime path
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\parser/*"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\netrw\parser/*"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\matchit\parser/*"
+Searching for "C:\Program Files\Neovim\lib\nvim\parser/*"
+Searching for "parser/c.*" in runtime path
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\parser/c.*"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\netrw\parser/c.*"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\matchit\parser/c.*"
+Searching for "C:\Program Files\Neovim\lib\nvim\parser/c.*"
+Searching for "parser/lua.*" in runtime path
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\parser/lua.*"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\netrw\parser/lua.*"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\matchit\parser/lua.*"
+Searching for "C:\Program Files\Neovim\lib\nvim\parser/lua.*"
+Searching for "parser/markdown.*" in runtime path
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\parser/markdown.*"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\netrw\parser/markdown.*"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\matchit\parser/markdown.*"
+Searching for "C:\Program Files\Neovim\lib\nvim\parser/markdown.*"
+Searching for "parser/markdown_inline.*" in runtime path
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\parser/markdown_inline.*"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\netrw\parser/markdown_inline.*"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\matchit\parser/markdown_inline.*"
+Searching for "C:\Program Files\Neovim\lib\nvim\parser/markdown_inline.*"
+Searching for "parser/query.*" in runtime path
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\parser/query.*"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\netrw\parser/query.*"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\matchit\parser/query.*"
+Searching for "C:\Program Files\Neovim\lib\nvim\parser/query.*"
+Searching for "parser/vim.*" in runtime path
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\parser/vim.*"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\netrw\parser/vim.*"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\matchit\parser/vim.*"
+Searching for "C:\Program Files\Neovim\lib\nvim\parser/vim.*"
+Searching for "parser/vimdoc.*" in runtime path
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\parser/vimdoc.*"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\netrw\parser/vimdoc.*"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\matchit\parser/vimdoc.*"
+Searching for "C:\Program Files\Neovim\lib\nvim\parser/vimdoc.*"
+
+Executing FileType Autocommands for "*"
+autocommand call s:LoadFTPlugin()
+
+Executing: call s:LoadFTPlugin()
+calling <SNR>1_LoadFTPlugin()
+
+line 1:     if exists("b:undo_ftplugin")
+line 2:       exe b:undo_ftplugin
+line 3:       unlet! b:undo_ftplugin b:did_ftplugin
+line 4:     endif
+line 5: 
+line 6:     let s = expand("<amatch>")
+line 7:     if s != ""
+line 8:       if &cpo =~# "S" && exists("b:did_ftplugin")
+line 9: ^I" In compatible mode options are reset to the global values, need to
+line 10: ^I" set the local values also when a plugin was already used.
+line 11: ^Iunlet b:did_ftplugin
+line 12:       endif
+line 13: 
+line 14:       " When there is a dot it is used to separate filetype names.  Thus for
+line 15:       " "aaa.bbb" load "aaa" and then "bbb".
+line 16:       for name in split(s, '\.')
+line 17:         " Load Lua ftplugins after Vim ftplugins _per directory_
+line 18:         " TODO(clason): use nvim__get_runtime when supports globs and modeline
+line 19:         " XXX: "[.]" in the first pattern makes it a wildcard on Windows
+line 20:         exe $'runtime! ftplugin/{name}[.]{{vim,lua}} ftplugin/{name}_*.{{vim,lua}} ftplugin/{name}/*.{{vim,lua}}'
+line 20: runtime! ftplugin/checkhealth[.]{vim,lua} ftplugin/checkhealth_*.{vim,lua} ftplugin/checkhealth/*.{vim,lua}
+Searching for "ftplugin/checkhealth[.]{vim,lua} ftplugin/checkhealth_*.{vim,lua} ftplugin/checkhealth/*.{vim,lua}" in runtime path
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\ftplugin/checkhealth[.]{vim,lua}"
+line 20: sourcing "C:\Program Files\Neovim\share\nvim\runtime\ftplugin\checkhealth.vim"
+line 1: " Vim filetype plugin
+line 2: " Language:     Nvim :checkhealth buffer
+line 3: 
+line 4: if exists("b:did_ftplugin")
+line 5:   finish
+line 6: endif
+line 7: 
+line 8: runtime! ftplugin/help.vim
+Searching for "ftplugin/help.vim" in runtime path
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\ftplugin/help.vim"
+line 8: sourcing "C:\Program Files\Neovim\share\nvim\runtime\ftplugin\help.vim"
+line 1: " Vim filetype plugin file
+line 2: " Language:             Vim help file
+line 3: " Previous Maintainer:  Nikolai Weibull <now@bitwi.se>
+line 4: " Latest Revision:      2018-12-29
+line 5: 
+line 6: if exists("b:did_ftplugin")
+line 7:   finish
+line 8: endif
+line 9: let b:did_ftplugin = 1
+line 10: 
+line 11: let s:cpo_save = &cpo
+line 12: set cpo&vim
+line 13: 
+line 14: let b:undo_ftplugin = "setl fo< tw< cole< cocu< keywordprg<"
+line 15: 
+line 16: setlocal formatoptions+=tcroql textwidth=78
+line 17: if has("conceal")
+line 18:   setlocal cole=2 cocu=nc
+line 19: endif
+line 20: 
+line 21: " Prefer Vim help instead of manpages.
+line 22: setlocal keywordprg=:help
+line 23: 
+line 24: let &cpo = s:cpo_save
+line 25: unlet s:cpo_save
+finished sourcing C:\Program Files\Neovim\share\nvim\runtime\ftplugin\help.vim
+continuing in C:\Program Files\Neovim\share\nvim\runtime\ftplugin\checkhealth.vim
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\netrw\ftplugin/help.vim"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\matchit\ftplugin/help.vim"
+Searching for "C:\Program Files\Neovim\lib\nvim\ftplugin/help.vim"
+line 9: 
+line 10: setlocal wrap breakindent linebreak nolist
+line 11: let &l:iskeyword='!-~,^*,^|,^",192-255'
+line 12: 
+line 13: if exists("b:undo_ftplugin")
+line 14:   let b:undo_ftplugin .= "|setl wrap< bri< lbr< kp< isk< list<"
+line 15: else
+line 16:   let b:undo_ftplugin = "setl wrap< bri< lbr< kp< isk< list<"
+line 17: endif
+finished sourcing C:\Program Files\Neovim\share\nvim\runtime\ftplugin\checkhealth.vim
+continuing in <SNR>1_LoadFTPlugin
+line 20: sourcing "C:\Program Files\Neovim\share\nvim\runtime\ftplugin\checkhealth.lua"
+finished sourcing C:\Program Files\Neovim\share\nvim\runtime\ftplugin\checkhealth.lua
+continuing in <SNR>1_LoadFTPlugin
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\ftplugin/checkhealth_*.{vim,lua}"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\ftplugin/checkhealth/*.{vim,lua}"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\netrw\ftplugin/checkhealth[.]{vim,lua}"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\netrw\ftplugin/checkhealth_*.{vim,lua}"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\netrw\ftplugin/checkhealth/*.{vim,lua}"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\matchit\ftplugin/checkhealth[.]{vim,lua}"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\matchit\ftplugin/checkhealth_*.{vim,lua}"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\matchit\ftplugin/checkhealth/*.{vim,lua}"
+Searching for "C:\Program Files\Neovim\lib\nvim\ftplugin/checkhealth[.]{vim,lua}"
+Searching for "C:\Program Files\Neovim\lib\nvim\ftplugin/checkhealth_*.{vim,lua}"
+Searching for "C:\Program Files\Neovim\lib\nvim\ftplugin/checkhealth/*.{vim,lua}"
+line 21:       endfor
+line 16:       for name in split(s, '\.')
+line 17:         " Load Lua ftplugins after Vim ftplugins _per directory_
+line 18:         " TODO(clason): use nvim__get_runtime when supports globs and modeline
+line 19:         " XXX: "[.]" in the first pattern makes it a wildcard on Windows
+line 20:         exe $'runtime! ftplugin/{name}[.]{{vim,lua}} ftplugin/{name}_*.{{vim,lua}} ftplugin/{name}/*.{{vim,lua}}'
+line 21:       endfor
+line 22:     endif
+<SNR>1_LoadFTPlugin returning #0
+
+continuing in FileType Autocommands for "*"
+
+Executing FileType Autocommands for "*"
+autocommand call s:LoadIndent()
+
+Executing: call s:LoadIndent()
+calling <SNR>2_LoadIndent()
+
+line 1:     if exists("b:undo_indent")
+line 2:       exe b:undo_indent
+line 3:       unlet! b:undo_indent b:did_indent
+line 4:     endif
+line 5:     let s = expand("<amatch>")
+line 6:     if s != ""
+line 7:       if exists("b:did_indent")
+line 8: ^Iunlet b:did_indent
+line 9:       endif
+line 10: 
+line 11:       " When there is a dot it is used to separate filetype names.  Thus for
+line 12:       " "aaa.bbb" load "indent/aaa.vim" and then "indent/bbb.vim".
+line 13:       for name in split(s, '\.')
+line 14:         " XXX: "[.]" in the pattern makes it a wildcard on Windows
+line 15:         exe $'runtime! indent/{name}[.]{{vim,lua}}'
+line 15: runtime! indent/checkhealth[.]{vim,lua}
+Searching for "indent/checkhealth[.]{vim,lua}" in runtime path
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\indent/checkhealth[.]{vim,lua}"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\netrw\indent/checkhealth[.]{vim,lua}"
+Searching for "C:\Program Files\Neovim\share\nvim\runtime\pack\dist\opt\matchit\indent/checkhealth[.]{vim,lua}"
+Searching for "C:\Program Files\Neovim\lib\nvim\indent/checkhealth[.]{vim,lua}"
+not found in runtime path: "indent/checkhealth[.]{vim,lua}"
+line 16:       endfor
+line 13:       for name in split(s, '\.')
+line 14:         " XXX: "[.]" in the pattern makes it a wildcard on Windows
+line 15:         exe $'runtime! indent/{name}[.]{{vim,lua}}'
+line 16:       endfor
+line 17:     endif
+<SNR>2_LoadIndent returning #0
+
+continuing in FileType Autocommands for "*"
+
+Executing FileType Autocommands for "*"
+autocommand if !exists('b:ts_highlight') | 0verbose exe "set syntax=" . expand("<amatch>") | endif
+
+Executing: if !exists('b:ts_highlight') | 0verbose exe "set syntax=" . expand("<amatch>") | endif
+Executing:  0verbose exe "set syntax=" . expand("<amatch>") | endif
+Executing:  endif
+line 6: redir END
+line 7: wqall
+Executing VimLeavePre Autocommands for "*"
+autocommand <Lua 83: C:\Program Files\Neovim\share\nvim\runtime/lua/vim/lsp.lua:1190>
+
+Executing: 
+Executing UILeave Autocommands for "*"
+autocommand <Lua 81: C:\Program Files\Neovim\share\nvim\runtime\plugin\osc52.lua:55>
+
+Executing: 
