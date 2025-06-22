@@ -34,14 +34,15 @@ opt.laststatus = 3                 -- Global statusline
 opt.winminwidth = 5                -- Minimum window width
 opt.splitright = true              -- Split to the right
 opt.splitbelow = true              -- Split below
-opt.fillchars = {
-  foldopen = "▼",
-  foldclosed = "▶",
-  fold = " ",
-  foldsep = " ",
-  diff = "╱",
-  eob = " ",
-}
+-- Fillchars configuration (commented out due to compatibility issues)
+-- opt.fillchars = {
+--   foldopen = "-",
+--   foldclosed = "+",
+--   fold = " ",
+--   foldsep = " ",
+--   diff = "\\",
+--   eob = " ",
+-- }
 
 -- Colors
 opt.termguicolors = true           -- True color support
