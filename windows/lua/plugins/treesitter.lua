@@ -14,8 +14,7 @@ return {
       "windwp/nvim-ts-autotag",
       "JoosepAlviste/nvim-ts-context-commentstring",
     },
-    config = function()
-      require("nvim-treesitter.configs").setup({
+    config = function()      require("nvim-treesitter.configs").setup({
         -- Ensure these language parsers are installed
         ensure_installed = {
           "lua",
@@ -25,7 +24,6 @@ return {
           "javascript",
           "typescript",
           "tsx",
-          "jsx",
           "html",
           "css",
           "scss",

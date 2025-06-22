@@ -28,7 +28,7 @@ return {
       require("mason-lspconfig").setup({
         ensure_installed = {
           "lua_ls",
-          "tsserver",
+          "ts_ls",
           "pyright",
           "gopls",
           "rust_analyzer",
@@ -175,7 +175,7 @@ return {
         },
 
         -- TypeScript/JavaScript
-        tsserver = {
+        ts_ls = {
           settings = {
             typescript = {
               inlayHints = {

@@ -23,18 +23,17 @@ return {
           selection_caret = " ",
           path_display = { "truncate" },
           file_ignore_patterns = { ".git/", "node_modules" },
-          
-          mappings = {
+            mappings = {
             i = {
               ["<C-k>"] = actions.move_selection_previous,
               ["<C-j>"] = actions.move_selection_next,
               ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-              ["<C-t>"] = trouble.open_with_trouble,
+              ["<C-t>"] = require("trouble.sources.telescope").open,
               ["<C-u>"] = false,
               ["<C-d>"] = false,
             },
             n = {
-              ["<C-t>"] = trouble.open_with_trouble,
+              ["<C-t>"] = require("trouble.sources.telescope").open,
             },
           },
           
